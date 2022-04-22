@@ -1,0 +1,9 @@
+li.btn-dark:hover,
+button.btn-dark:hover {
+  background-color: var(--bs-light);
+  color: var(--bs-dark);
+}
+input:focus {
+  outline: 0;
+  caret-color: var(--bs-dark);
+}
