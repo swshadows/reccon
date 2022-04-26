@@ -1,4 +1,4 @@
-# Inovatec 2022 - App de Reciclagem
+# Reccon - App de Reciclagem
 
 Uma aplicação Web com backend e frontend funcionais desenvolvidas pela equipe da turma SIS201N01 do campus FAMETRO Manaus - Zona Leste com o intuito de unificar e conectar doadores e catadores de materiais para reciclagem
 
@@ -6,15 +6,13 @@ Uma aplicação Web com backend e frontend funcionais desenvolvidas pela equipe 
 
 ## Inicialização
 
-Use os seguintes comandos para iniciar o projeto
-
-- Importe o banco de dados SQL em [/db/init.sql](/db/init.sql)
 - Use os comandos para clonar o repositório
 
 ```
-  git clone https://github.com/swshadows/inovatec2022.git
-  cd inovatec2022
+  git clone https://github.com/swshadows/reccon.git
+  cd reccon
 ```
 
-- Inicialize o projeto com o comando `php -S localhost:3000 -t ./public`
+- Baixe as requisições do projeto com o comando `npm install`
+- Inicialize o projeto com o comando `npm start`
 - Acesse http://localhost:3000 no navegador
