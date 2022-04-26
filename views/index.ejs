@@ -29,9 +29,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action="routes/login.php" method="POST" class="d-flex flex-column align-items-center gap-3">
-              <input class="border-0 border-bottom border-dark w-50 text-dark" name="email-log" type="text" placeholder="Digite aqui seu email" />
-              <input class="border-0 border-bottom border-dark w-50 text-dark" name="pass-log" type="password" placeholder="Digite aqui sua senha" id="pass-log" />
+            <form action="forms/login" method="POST" class="d-flex flex-column align-items-center gap-3">
+              <input class="border-0 border-bottom border-dark w-50 text-dark" name="emaillog" type="text" placeholder="Digite aqui seu email" />
+              <input class="border-0 border-bottom border-dark w-50 text-dark" name="passlog" type="password" placeholder="Digite aqui sua senha" id="pass-log" />
               <div><input type="checkbox" id="showPassLog" data-target="pass-log" onclick="showPassword(this, this.dataset.target)" class="showpass" /> <span>Mostrar senha</span></div>
               <input type="submit" class="w-50 btn btn-dark" value="Fazer login" />
             </form>
@@ -48,10 +48,10 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action="../routes/reg.php" method="POST" class="d-flex flex-column align-items-center gap-3">
-              <input class="border-0 border-bottom border-dark w-50 text-dark" name="email-reg" type="text" placeholder="Digite aqui seu email" />
-              <input class="border-0 border-bottom border-dark w-50 text-dark" name="pass-reg" id="pass-reg" type="password" placeholder="Digite aqui sua senha" />
-              <input class="border-0 border-bottom border-dark w-50 text-dark" name="pass-conf-reg" id="pass-conf-reg" type="password" placeholder="Confirme aqui sua senha" />
+            <form action="forms/register" method="POST" class="d-flex flex-column align-items-center gap-3">
+              <input class="border-0 border-bottom border-dark w-50 text-dark" name="emailreg" type="text" placeholder="Digite aqui seu email" />
+              <input class="border-0 border-bottom border-dark w-50 text-dark" name="passreg" id="pass-reg" type="password" placeholder="Digite aqui sua senha" />
+              <input class="border-0 border-bottom border-dark w-50 text-dark" name="passconfreg" id="pass-conf-reg" type="password" placeholder="Confirme aqui sua senha" />
               <div><input type="checkbox" id="showPassLog" data-target="pass-reg" onclick="showPassword(this, this.dataset.target)" class="showpass" /> <span>Mostrar senha</span></div>
               <input type="submit" class="w-50 btn btn-dark" value="Fazer registro" />
             </form>

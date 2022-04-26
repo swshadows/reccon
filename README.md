@@ -13,6 +13,9 @@ Uma aplicação Web com backend e frontend funcionais desenvolvidas pela equipe 
   cd reccon
 ```
 
+- Insira o banco de dados em [/db/init.sql](db/init.sql)
+- Crie as variáveis do projeto num arquivo `.env`
+  - DB_USER, DB_PASS e SERVER_PORT devem ser definidos
 - Baixe as requisições do projeto com o comando `npm install`
 - Inicialize o projeto com o comando `npm start`
 - Acesse http://localhost:3000 no navegador

@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS reccon;
+CREATE DATABASE reccon;
+USE reccon;
