@@ -2,7 +2,7 @@
 
 Uma aplicação Web com backend e frontend funcionais desenvolvidas pela equipe da turma SIS201N01 do campus FAMETRO Manaus - Zona Leste com o intuito de unificar e conectar doadores e catadores de materiais para reciclagem
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](/public/assets/banner.svg)
 
 ## Inicialização
 
@@ -15,7 +15,8 @@ Uma aplicação Web com backend e frontend funcionais desenvolvidas pela equipe 
 
 - Insira o banco de dados em [/db/init.sql](db/init.sql)
 - Crie as variáveis do projeto num arquivo `.env`
-  - DB_USER, DB_PASS e SERVER_PORT devem ser definidos
+  - `DB_USER` (usuário do banco), `DB_PASS` (senha do banco) e `SERVER_PORT` (porta do servidor) devem ser definidos
 - Baixe as requisições do projeto com o comando `npm install`
 - Inicialize o projeto com o comando `npm start`
-- Acesse http://localhost:3000 no navegador
+- Acesse o endereço http://localhost:3000 no navegador
+  - Caso você tenha definido SERVER_PORT em `.env`, acesse com a porta correspondente
