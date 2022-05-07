@@ -1,8 +1,7 @@
 const dotenv = require("dotenv").config();
 const express = require("express");
 const app = express();
-// const database_loader = require("./loaders/database")();
-const routes_loader = require("./loaders/routes")(app);
+const routes = require("./loaders/routes")(app);
 
 app.set("template engine", "ejs");
 app.set("views", __dirname + "/views");
