@@ -24,6 +24,10 @@ const User = sequelize.define("users", {
     type: Sequelize.STRING(255),
     allowNull: false,
   },
+  address: {
+    type: Sequelize.STRING(40),
+    allowNull: false,
+  },
 });
 
 module.exports = User;

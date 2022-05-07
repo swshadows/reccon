@@ -1,17 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const connection = require("../loaders/database");
+const sync = require("../middleware/syncDatabase");
+const userController = require("../controllers/User");
 
-router.post("/login", async (req, res) => {
-  await connection.sync();
+router.post("/login", sync, async (req, res) => {
   // TODO
   res.send("Rota: /login");
 });
 
-router.post("/register", async (req, res) => {
-  await connection.sync();
-  // TODO
-  res.send("Rota: /register");
-});
+router.get("/list", sync, userController.listAllUsers);
+router.post("/register", sync, userController.registerUser);
+router.delete("/delete", sync, userController.deleteUser);
 
 module.exports = router;
