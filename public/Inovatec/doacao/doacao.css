@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+
+* {
+    font-family: 'Jockey One', sans-serif;
+}
+
+/*paleta de cores do projeto*/
+.primary-bg-color{
+    background-color: #f5ffee !important;
+}
+
+.secundary-bg-color{
+    background-color: #5b3690 !important;
+}
+
+.greem-bg-color{
+    background-color: #1fec8c !important;
+}
+
+.last-bg-color{
+    background-color: #e28413 !important;
+}
+
+.fff-bg-color{
+    background-color: #fff;
+}
+/*paleta de cores do projeto*/
+
+
+
+
+/* estilizando o formulario*/
+
+.formulario{
+    margin-top: 100px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 90%;
+    
+}
+
+.eye-pass button{
+    width: 20px !important;
+}
+
+.form-group input, select{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+.form-group button{
+    width: 70%;
+    margin: auto;
+}
+
+.select{
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-enviar button{
+    width: 200px;
+}
+
+.fotos img{
+    width: 80px;
+}
+
+
+/*Classe padrao para sombra*/
+.radius{
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
