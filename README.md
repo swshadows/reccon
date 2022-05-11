@@ -4,6 +4,21 @@ Uma aplicação Web com backend e frontend funcionais desenvolvidas pela equipe 
 
 ![Logo](/public/assets/banner.svg)
 
+<div align="center">
+  <img width=40 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg">
+
+<a href="https://www.figma.com/file/BfEmE4YiZ0DSRzPSP4g5Kw/reccon?node-id=0%3A1">Templates no Figma</a>
+
+</div>
+
+## Equipe de Desenvolvimento
+
+[@swshadows](https://github.com/swshadows) - Backend Node.js / Design
+
+[@Suevo404](https://github.com/Suevo404) - Frontend Bootstrap
+
+Sobre a equipe geral, veja a [documentação](DOCUMENTATION.md#equipe)
+
 ## Inicialização
 
 - Use os comandos para clonar o repositório
@@ -13,7 +28,7 @@ Uma aplicação Web com backend e frontend funcionais desenvolvidas pela equipe 
     cd reccon
   ```
 
-- Insira o banco de dados em [/db/init.sql](db/init.sql)
+- Insira o banco de dados em [/database/init.sql](database/init.sql)
 - Crie as variáveis do projeto num arquivo `.env`
 
   ```
