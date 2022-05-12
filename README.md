@@ -21,12 +21,19 @@ Sobre a equipe geral, veja a [documentação](DOCUMENTATION.md#equipe)
 
 ## Inicialização
 
+<div align=center>
+
+### Requisitos
+
+[Node.js](https://nodejs.org/en/) e NPM | [MariaDB](https://mariadb.org/) ou [MySQL](https://www.mysql.com/)
+
+</div>
 - Use os comandos para clonar o repositório
 
-  ```
-    git clone https://github.com/swshadows/reccon.git
-    cd reccon
-  ```
+```
+  git clone https://github.com/swshadows/reccon.git
+  cd reccon
+```
 
 - Insira o banco de dados em [/database/init.sql](database/init.sql)
 - Crie as variáveis do projeto num arquivo `.env`
