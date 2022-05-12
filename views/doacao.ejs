@@ -19,8 +19,8 @@
     <!--NavBar do projeto RECCON-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 px-1 greem-bg-color">
       <div class="container img-left">
-        <a class="navbar-brand" href="./indexPrimary.ejs"><img src="/public/assets/app_icon.png" alt=""></a>
-        <a class="navbar-brand" href="./indexPrimary.ejs"><img src="/public/assets/app_name.png" alt=""></a>
+        <a class="navbar-brand" href="/reccon"><img src="assets/app_icon.png" alt=""></a>
+        <a class="navbar-brand" href="/reccon"><img src="assets/app_name.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,7 +50,7 @@
               <div class="col-md-12">
                 <div class="fff-bg-color">
                     
-                    <form action="/forms/create_ad" class="d-flex flex-column align-items-center formulario text-center radius">
+                    <form action="/forms/create_ad" class="d-flex flex-column align-items-center formulario text-center radius" method="post">
                         <h2>Oque você está doando?</h2>
                     <div class="form-group py-4 px-4">
                         <input type="text" name="nome" id="nome" placeholder="Oque você esta doando" required></input>
@@ -65,8 +65,8 @@
                                  </select>
 
                                  <div class="fotos">
-                                    <a class="navbar-brand" href="#"><img src="/public/assets/icon.svg" alt=""></a>
-                                    <a class="navbar-brand" href="#"><img src="/public/assets/text.svg" alt=""></a>
+                                    <a class="navbar-brand" href="#"><img src="assets/icon.svg" alt=""></a>
+                                    <a class="navbar-brand" href="#"><img src="assets/text.svg" alt=""></a>
                                  </div>
                              </div>
                              <div class="btn-enviar align-self-start">

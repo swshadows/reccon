@@ -19,8 +19,8 @@
     <!--NavBar do projeto RECCON-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 px-1 greem-bg-color">
         <div class="container img-left">
-          <a class="navbar-brand" href="./indexPrimary.ejs"><img src="/public/assets/app_icon.png" alt=""></a>
-          <a class="navbar-brand" href="./indexPrimary.ejs"><img src="/public/assets/app_name.png" alt=""></a>
+          <a class="navbar-brand" href="/reccon"><img src="/assets/app_icon.png" alt=""></a>
+          <a class="navbar-brand" href="/reccon"><img src="/assets/app_name.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -39,7 +39,7 @@
               </li>
             </ul>
             <form class="d-flex">
-              <a href="./loginUser.ejs"><button type="button" class="btn btn-primary btn-lg secundary-bg-color">Login/Cadastro</button></a>
+              <a href="/form/register"><button type="button" class="btn btn-primary btn-lg secundary-bg-color">Login/Cadastro</button></a>
             </form>
           </div>
         </div>
@@ -50,7 +50,7 @@
           <div class="row">
               <div class="col-md-6">
                 <div class="fff-bg-color">
-                    <form action="/forms/register" class="d-flex justify-content-center formulario radius">
+                    <form action="/forms/register" class="d-flex justify-content-center formulario radius" method="post">
                     <div class="form-group py-4 px-4">
                       <!--input do formulario-->
                         <input type="text" name="name" id="name" placeholder="Digite seu Nome Completo" required></input>
@@ -71,7 +71,7 @@
                             <option value="4">Paque Dez</option>
                         </select>
 
-                        <a href="./anuncios.ejs"><button type="button" class="btn btn-primary btn-lg secundary-bg-color">Criar uma conta</button></a>
+                        <a href="/forms/announcement"><button type="button" class="btn btn-primary btn-lg secundary-bg-color">Criar uma conta</button></a>
                     </div>
                     </form>
                 </div>
@@ -80,7 +80,7 @@
               <!--Fazer Login-->
               <div class="col-md-6">
                 <div class="fff-bg-color">
-                    <form action="/forms/login" class="d-flex justify-content-center formulario radius">
+                    <form action="/forms/login" class="d-flex justify-content-center formulario radius" method="post">
                     <div class="form-group py-4 px-4">
                         <input type="email" name="email" id="email" placeholder="Digite Seu Email" required>
                         <input type="password" name="password" id="password" placeholder="Digite sua Senha" required>
@@ -89,7 +89,7 @@
                             <label for="mostrarSenha"> Mostrar Senha</label>
                         </div>
 
-                        <a href="./anuncios.ejs"><button type="button" class="btn btn-primary btn-lg secundary-bg-color">Fazer login</button></a>
+                        <a href="/forms/announcement"><button type="button" class="btn btn-primary btn-lg secundary-bg-color">Fazer login</button></a>
                     </div>
                     </form>
                 </div>
@@ -114,8 +114,8 @@
 
 
       <!--script do mostrar senha-->
-      <script src="/public/js/mostrarSenhaForm.js"></script>
-      <script src="/public/js/mostrarSenhaLogin.js"></script>
+      <script src="js/mostrarSenhaForm.js"></script>
+      <script src="js/mostrarSenhaLogin.js"></script>
     <!--Bootstrap Javascript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
