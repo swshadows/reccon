@@ -1,5 +1,5 @@
-const User = require("../models/User");
 const bcrypt = require("bcrypt");
+const User = require("../models/User");
 
 module.exports = {
   async listAllUsers(req, res) {
@@ -8,9 +8,13 @@ module.exports = {
   },
 
   async registerUser(req, res) {
-    const findUser = await User.findOne({ where: { email: req.body.email } });
-    if (findUser) return res.status(400).json({ message: "Usuário já existente no banco de dados" });
-    // TODO: Validate user register (double pass confirm & etc.)
+    if (req.body.password != req.body.password_confirm) return res.status(400).json({ message: "Senhas não são iguais" });
+
+    const findEmail = await User.findOne({ where: { email: req.body.email } });
+    if (findEmail) return res.status(400).json({ message: "Email já registrado no banco de dados" });
+
+    const findPhone = await User.findOne({ where: { phone: req.body.phone } });
+    if (findPhone) return res.status(400).json({ message: "Telefone já registrado no banco de dados" });
 
     const users = await User.create({
       name: req.body.name,
@@ -41,11 +45,14 @@ module.exports = {
     if (req.body.address) user.address = req.body.address;
   },
 
-  async comparePasswords(req, res) {
+  async authenticateUser(req, res) {
     const user = await User.findOne({ where: { email: req.body.email } });
     if (!user) return res.status(400).json({ message: "Usuário não existente no banco de dados" });
 
-    if (await bcrypt.compare(req.body.password, user.password)) res.status(200).send("A senha enviada confirma com o hash no banco");
-    else res.status(400).send("A senha enviada NÃO confirma com o hash no banco");
+    if (await bcrypt.compare(req.body.password, user.password)) {
+      req.session.logged = true;
+      req.session.email = user.email;
+      res.redirect("/app");
+    } else res.status(400).send("A senha enviada NÃO confirma com o hash no banco");
   },
 };

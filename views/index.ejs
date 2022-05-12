@@ -1,77 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title><\ APPNAME \></title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <!-- Bootstrap CSS v5.0.2 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/index.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!--css do projeto-->
+    <link rel="stylesheet" href="css/stylePrimary.css" />
+    <!--Bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+    <title>RECCON</title>
   </head>
-
-  <body>
-    <nav class="nav bg-dark w-100 flex justify-content-between p-3 text-light">
-      <div class="navbar-brand"><\ APPNAME \></div>
-      <ul class="flex flex-row gap-4 navbar-nav">
-        <li class="nav-item btn btn-dark border-1 border-light rounded-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</li>
-        <li class="nav-item btn btn-dark border-1 border-light rounded-2" data-bs-toggle="modal" data-bs-target="#registerModal">Registrar-se</li>
-      </ul>
+  <body class="primary-bg-color">
+    <!--NavBar do projeto RECCON-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-2 px-1 greem-bg-color">
+      <div class="container img-left">
+        <a class="navbar-brand" href="./indexPrimary.ejs"><img src="/assets/app_icon.png" alt="" /></a>
+        <a class="navbar-brand" href="./indexPrimary.ejs"><img src="/assets/app_name.png" alt="" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown d-flex gap-2" id="sobre-nos">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Sobre Nos </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <p class="text-md-start">alguma coisa</p>
+              </ul>
+            </li>
+            <li class="nav-item dropdown d-flex gap-2" id="sobre-nos">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Sobre o projeto </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <p class="text-md-start">Tenatando ganhar nossos 5 pontos</p>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <% if (!logged) { %>
+            <a href="/forms"><button type="button" class="btn btn-primary btn-lg secundary-bg-color">Login/Cadastro</button></a>
+            <% } else { %>
+            <a href="/app"><button type="button" class="btn btn-primary btn-lg secundary-bg-color">Ver anúncios</button></a>
+            <% } %>
+          </form>
+        </div>
+      </div>
     </nav>
 
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Formulario de login</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!--Conteudo principal-->
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <!--Carrossel 01-->
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 reccon mb-5">
+                <div class="reccon-img radius mb-5 d-flex justify-content-around align-items-center text-center">
+                  <div class="image-left"><img src="/assets/image 1.svg" alt="" /></div>
+                  <div class="image-right"><img src="/assets/Reccon.svg" alt="" /></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="modal-body">
-            <form action="forms/login" method="POST" class="d-flex flex-column align-items-center gap-3">
-              <input class="border-0 border-bottom border-dark w-50 text-dark" name="emaillog" type="text" placeholder="Digite aqui seu email" />
-              <input class="border-0 border-bottom border-dark w-50 text-dark" name="passlog" type="password" placeholder="Digite aqui sua senha" id="pass-log" />
-              <div><input type="checkbox" id="showPassLog" data-target="pass-log" onclick="showPassword(this, this.dataset.target)" class="showpass" /> <span>Mostrar senha</span></div>
-              <input type="submit" class="w-50 btn btn-dark" value="Fazer login" />
-            </form>
+        </div>
+        <div class="carousel-item">
+          <!--Carrossel 02-->
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 reccon mb-5">
+                <div class="reccon-img radius mb-5 d-flex justify-content-around align-items-center text-center">
+                  <div class="image-left"><img src="/assets/Reccon.svg" alt="" /></div>
+                  <div class="image-right"><img src="/assets/Reccon.svg" alt="" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <!--Carrossel 03-->
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 reccon mb-5">
+                <div class="reccon-img radius mb-5 d-flex justify-content-around align-items-center text-center">
+                  <div class="image-left"><img src="/assets/text.svg" alt="" /></div>
+                  <div class="image-right"><img src="/assets/Reccon.svg" alt="" /></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Register Modal -->
-    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Formulario de registro</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form action="forms/register" method="POST" class="d-flex flex-column align-items-center gap-3">
-              <input class="border-0 border-bottom border-dark w-50 text-dark" name="emailreg" type="text" placeholder="Digite aqui seu email" />
-              <input class="border-0 border-bottom border-dark w-50 text-dark" name="passreg" id="pass-reg" type="password" placeholder="Digite aqui sua senha" />
-              <input class="border-0 border-bottom border-dark w-50 text-dark" name="passconfreg" id="pass-conf-reg" type="password" placeholder="Confirme aqui sua senha" />
-              <div><input type="checkbox" id="showPassLog" data-target="pass-reg" onclick="showPassword(this, this.dataset.target)" class="showpass" /> <span>Mostrar senha</span></div>
-              <input type="submit" class="w-50 btn btn-dark" value="Fazer registro" />
-            </form>
-          </div>
-        </div>
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
 
-    <main>
-      <h1 class="text-center mt-5">TEXTO PLACEHOLDER, DESCRIÇÃO DO APP, TALVEZ COMPONENTE CAROUSEL?</h1>
-    </main>
-    <footer class="fixed-bottom bg-dark w-100 d-flex justify-content-between p-3 text-light">
-      <p class="m-0">Todos os direitos reservados ©</p>
-      <p class="m-0">LINKS UTEIS AQUI?!</p>
-      <p class="m-0"><\ APPNAME \>, 2022</p>
+    <!--Footer do projeto-->
+    <footer id="footer" class="fixed-bottom greem-bg-color">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 d-flex justify-content-between py-3">
+              <span>Todos os direitos reservados &copy;</span>
+              <span>RECCON 2022</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script src="js/index.js"></script>
+    <!--Bootstrap Javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

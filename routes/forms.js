@@ -1,15 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const sync = require("../middleware/syncDatabase");
 const userController = require("../controllers/User");
+const Address = require("../models/Address");
+const { checkLogged } = require("../middleware/checkAuth");
 
-router.post("/login", sync, async (req, res) => {
-  // TODO
-  res.send("Rota: /login");
+router.get("/", checkLogged, async (req, res) => {
+  const addresses = await Address.findAll();
+  res.render("loginUser.ejs", { address: addresses });
 });
-
-router.get("/list", sync, userController.listAllUsers);
-router.post("/register", sync, userController.registerUser);
-router.delete("/delete", sync, userController.deleteUser);
+router.post("/login", userController.authenticateUser);
+router.post("/register", userController.registerUser);
+router.delete("/delete", userController.deleteUser);
 
 module.exports = router;

@@ -1,7 +1,9 @@
 const dotenv = require("dotenv").config();
 const express = require("express");
 const app = express();
-const routes = require("./loaders/routes")(app);
+const session = require("./auth/session")(app);
+const routes = require("./routes/routes")(app);
+const db = require("./database/db");
 
 app.set("template engine", "ejs");
 app.set("views", __dirname + "/views");
