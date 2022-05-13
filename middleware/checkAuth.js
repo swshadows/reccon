@@ -12,4 +12,4 @@ const checkLogged = (req, res, next) => {
 };
 
 module.exports.checkNotLogged = checkNotLogged;
-module.exports.checkLogged = checkNotLogged;
+module.exports.checkLogged = checkLogged;
