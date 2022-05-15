@@ -43,14 +43,20 @@
           </div>
         </div>
       </nav>
+      <% if (locals.success) { %>
+        <div class="alert alert-success" role="alert"><%=success; %></div>
+      <% } %>
+      <% if (locals.error) { %>
+        <div class="alert alert-danger" role="alert"><%=error; %></div>
+      <% } %>
 
       <!--Formulario de Cadastro-->
       <div class="container">
           <div class="row">
               <div class="col-md-12">
                 <div class="fff-bg-color">
-                    <form action="/me/update" class="formulario text-center radius" method="post">
-                        <h2>Bem-vindo, <%= userinfo.name %></h2>
+                    <form action="/me/update/send" class="formulario text-center radius" method="post">
+                        <h2>Bem-vindo, <%=userinfo.name %></h2>
                     <div class="form-group py-4 px-4">
                         <!--input do nome-->
                         <div class="name d-flex gap-2">
@@ -59,9 +65,14 @@
                         </div>
                         <!--input do email-->
                         <div class="email-user d-flex gap-2">
-                            <input type="email" name="email" id="email" placeholder="Digite novo Email" required>
+                            <input type="email" name="email" id="email" placeholder="Digite novo e-mail" required>
                             <label for="email"> Email atual: <%= userinfo.email %></label>
                         </div>
+                        <!--input do telefone-->
+                        <div class="email-user d-flex gap-2">
+                          <input type="tel" name="phone" id="phone" placeholder="Digite novo telefone" required>
+                          <label for="phone"> Telefone atual: <%= userinfo.phone %></label>
+                      </div>
                         <!--alterar bairros-->
                         <select name="adress" id="adress" required>
                             <option value="" disabled selected="selected">Alterar Seu Bairro</option>
@@ -72,7 +83,7 @@
                         <!--input das senhas-->
                         <div class="senha d-flex gap-3">
                             <input type="password" name="password" id="password" placeholder="Digite sua senha atual" required>
-                            <input type="password" name="new-password" id="new_password" placeholder="Nova senha" required>
+                            <input type="password" name="new_password" id="new_password" placeholder="Digite a nova senha" required>
                             <input type="Password" name="new_password_confirm" id="new_password_confirm" placeholder="Confirme sua senha" required>
                                 <div class="eye-pass">
                                     <button type="button" id="btn" class="btn btn-primary btn-sm secundary-bg-color"></button>
@@ -80,7 +91,7 @@
                                 </div>
                         </div>
 
-                        <button type="button" id="btn" class="btn btn-primary btn-sm secundary-bg-color">Salvar alterações</button>
+                        <input type="submit" id="btn" class="btn btn-primary btn-sm secundary-bg-color" value="Salvar alterações">
                     </div>
                     </form>
                 </div>
@@ -107,7 +118,7 @@
 
 
       <!--script do mostrar senha-->
-      <script src="js/mostrarSenha.js"></script>
+      <script src="/js/mostrarSenha.js"></script>
     <!--Bootstrap Javascript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

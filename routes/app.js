@@ -5,12 +5,17 @@ const { checkNotLogged } = require("../middleware/checkAuth");
 
 router.get("/", checkNotLogged, async (req, res) => {
   const addresses = await Address.findAll();
-  res.render("anuncios.ejs", { address: addresses });
+  if (req.session.warning) {
+    const warning = req.session.warning;
+    req.session.warning = null;
+    return res.render("app.ejs", { address: addresses, warning: warning });
+  }
+  res.render("app.ejs", { address: addresses });
 });
 
 router.get("/create_ad", checkNotLogged, async (req, res) => {
   const addresses = await Address.findAll();
-  res.render("doacao.ejs", { address: addresses });
+  res.render("create_ad.ejs", { address: addresses });
 });
 
 module.exports = router;

@@ -44,6 +44,17 @@
           </div>
         </div>
       </nav>
+      <% if (locals.error) { %>
+      <div class="alert alert-danger" role="alert">
+        <%=error; %>
+      </div>
+      <% locals.error = null; } %>
+      <% if (locals.success) { %>
+        <div class="alert alert-success" role="alert"><%=success; %></div>
+      <% } %>
+      <% if (locals.warning) { %>
+        <div class="alert alert-warning" role="alert"><%=warning; %></div>
+      <% } %>
 
       <!--Formulario de Cadastro-->
       <div class="container">
@@ -57,7 +68,7 @@
                         <input type="email" name="email" id="email" placeholder="Digite seu Email" required>
                         <input type="password" name="password" id="password" placeholder="Digite sua Senha" required>
                         <input type="Password" name="password_confirm" id="password_confirm" placeholder="Confirme sua Senha" required>
-                        <input type="tell" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX" required>
+                        <input type="tel" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX" required>
                         <div class="eye-pass ">
                             <button type="button" id="btn" class="btn btn-primary btn-sm secundary-bg-color"></button>
                             <label for="mostrarSenha"> Mostrar Senha</label>

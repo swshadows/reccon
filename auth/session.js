@@ -1,12 +1,12 @@
 const dotenv = require("dotenv").config();
 const express = require("express");
-const session = require("express-session");
+const session = require("cookie-session");
 module.exports = (app) => {
   app.use(
     session({
+      name: "session",
       secret: process.env.SESSION_SECRET,
-      resave: true,
-      saveUninitialized: true,
+      maxAge: 72 * 60 * 60 * 1000, // 3 dias
     })
   );
 };

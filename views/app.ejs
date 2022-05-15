@@ -38,6 +38,9 @@
         </div>
       </div>
     </nav>
+    <% if (locals.warning) { %>
+    <div class="alert alert-warning" role="alert"><%=warning; %></div>
+    <% } %>
 
     <!--botoes bairros-->
     <div class="container mt-5 fff-bg-color py-3 px-3 radius">
