@@ -1,6 +1,5 @@
-const dotenv = require("dotenv").config();
-const express = require("express");
 const session = require("cookie-session");
+
 module.exports = (app) => {
   app.use(
     session({

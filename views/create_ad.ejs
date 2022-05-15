@@ -9,7 +9,7 @@
     rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
     crossorigin="anonymous">
     <!--css do projeto-->
-    <link rel="stylesheet" href="/css/doacao.css">
+    <link rel="stylesheet" href="/css/create_ad.css">
     <!--Bootstrap icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>Doação</title>
@@ -50,13 +50,13 @@
               <div class="col-md-12">
                 <div class="fff-bg-color">
 
-                    <form action="/forms/create_ad" class="d-flex flex-column align-items-center formulario text-center radius" method="post">
+                    <form action="/forms/create_ad" class="d-flex flex-column align-items-center formulario text-center radius" method="post" enctype="multipart/form-data">
                         <h2>Oque você está doando?</h2>
                     <div class="form-group py-4 px-4">
-                        <input type="text" name="nome" id="nome" placeholder="Oque você esta doando" required></input>
-                        <textarea name="" id="" cols="30" rows="5" placeholder="Descreva seu anuncio em detalhes(Max 200 Caracteries)"></textarea>
+                        <input type="text" name="title" id="title" placeholder="Oque você esta doando" required></input>
+                        <textarea name="description" id="description" cols="30" rows="5" placeholder="Descreva seu anuncio em detalhes (Max 200 Caracteres)" required></textarea>
                              <div class="select">
-                                 <select name="Bairro" id="Bairro" required>
+                                 <select name="address" id="address" required>
                                      <option value="" disabled selected="selected"> Selecione o Bairro de Coleta</option>
                                      <% for(let i = 0; i < address.length; i++) { %>
                                       <option value=<%=address[i].dataValues.id%>><%= address[i].dataValues.name %></option>
@@ -64,12 +64,15 @@
                                  </select>
 
                                  <div class="fotos">
-                                    <a class="navbar-brand" href="#"><img src="/assets/icon.svg" alt=""></a>
-                                    <a class="navbar-brand" href="#"><img src="/assets/text.svg" alt=""></a>
+                                   <label for="image">
+                                     <a class="navbar-brand" href="#"><img src="/assets/icon.svg" alt=""></a>
+                                     <a class="navbar-brand" href="#"><img src="/assets/text.svg" alt=""></a>
+                                     <input type="file" name="image">
+                                    </label>
                                  </div>
                              </div>
                              <div class="btn-enviar align-self-start">
-                                <button type="submit" id="btn" class="btn btn-primary btn-sm secundary-bg-color">Enviar Anuncio</button>
+                                <input type="submit" id="btn" class="btn btn-primary btn-sm secundary-bg-color" value="Enviar anuncio">
                             </div>
                      </div>
                     </form>

@@ -1,35 +1,37 @@
 const Sequelize = require("sequelize");
 const sequelize = require("../database/db");
+const User = require("../models/User");
 const Address = require("../models/Address");
 
-const User = sequelize.define("users", {
+const Ads = sequelize.define("ads", {
   id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
     allowNull: false,
     primaryKey: true,
   },
-  name: {
+  title: {
     type: Sequelize.STRING(50),
     allowNull: false,
   },
-  email: {
+  description: {
+    type: Sequelize.STRING(200),
+    allowNull: false,
+  },
+  image_path: {
     type: Sequelize.STRING(50),
-    allowNull: false,
-  },
-  phone: {
-    type: Sequelize.STRING(30),
-    allowNull: false,
-  },
-  password: {
-    type: Sequelize.STRING(255),
-    allowNull: false,
+    allowNull: true,
   },
 });
 
-User.belongsTo(Address, {
+Ads.belongsTo(User, {
+  constraint: true,
+  foreignKey: "fk_user",
+});
+
+Ads.belongsTo(Address, {
   constraint: true,
   foreignKey: "fk_address",
 });
 
-module.exports = User;
+module.exports = Ads;

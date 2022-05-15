@@ -8,15 +8,10 @@ const { checkNotLogged } = require("../middleware/checkAuth");
 router.get("/update", checkNotLogged, async (req, res) => {
   const user = await User.findOne({ where: { email: req.session.email } });
   const addresses = await Address.findAll();
-  if (req.session.error) {
-    const error = req.session.error;
-    req.session.error = null;
-    return res.render("me_update.ejs", { userinfo: user.dataValues, address: addresses, error: error });
-  }
-  if (req.session.success) {
-    const success = req.session.success;
-    req.session.success = null;
-    return res.render("me_update.ejs", { userinfo: user.dataValues, address: addresses, success: success });
+  if (req.session.message) {
+    const message = req.session.message;
+    req.session.message = null;
+    return res.render("me_update.ejs", { userinfo: user.dataValues, address: addresses, message: message });
   }
   res.render("me_update.ejs", { userinfo: user.dataValues, address: addresses });
 });

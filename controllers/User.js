@@ -9,19 +9,19 @@ module.exports = {
 
   async registerUser(req, res) {
     if (req.body.password != req.body.password_confirm) {
-      req.session.error = "ERRO: As senhas não são iguais";
+      req.session.message = { class: "danger", text: "ERRO: As senhas não são iguais" };
       return res.redirect("/forms");
     }
 
     const findEmail = await User.findOne({ where: { email: req.body.email } });
     if (findEmail) {
-      req.session.error = "ERRO: Este email já está registrado no banco de dados";
+      req.session.message = { class: "danger", text: "ERRO: Este email já está registrado no banco de dados" };
       return res.redirect("/forms");
     }
 
     const findPhone = await User.findOne({ where: { phone: req.body.phone } });
     if (findPhone) {
-      req.session.error = "ERRO: Este telefone já está registrado no banco de dados";
+      req.session.message = { class: "danger", text: "ERRO: Este telefone já está registrado no banco de dados" };
       return res.redirect("/forms");
     }
 
@@ -30,9 +30,9 @@ module.exports = {
       email: req.body.email,
       phone: req.body.phone,
       password: await bcrypt.hash(req.body.password, 10),
-      address: req.body.address,
+      fk_address: req.body.address,
     });
-    req.session.success = "Conta registrada com sucesso, faça login!";
+    req.session.message = { class: "success", text: "Conta registrada com sucesso, faça login!" };
     return res.redirect("/forms");
   },
 
@@ -47,24 +47,24 @@ module.exports = {
   async updateUser(req, res) {
     const findUser = await User.findOne({ where: { email: req.session.email } });
     if (!(await bcrypt.compare(req.body.password, findUser.password))) {
-      req.session.error = "ERRO: Credenciais incorretas";
+      req.session.message = { class: "danger", text: "ERRO: Credenciais incorretas" };
       return res.redirect("/me/update");
     }
 
     if (req.body.new_password != req.body.new_password_confirm) {
-      req.session.error = "ERRO: As senhas não são iguais";
+      req.session.message = { class: "danger", text: "ERRO: As senhas não são iguais" };
       return res.redirect("/me/update");
     }
 
     let checkConflict = await User.findOne({ where: { phone: req.body.phone } });
     if (checkConflict) {
-      req.session.error = "ERRO: Este telefone já está em uso";
+      req.session.message = { class: "danger", text: "ERRO: Este telefone já está em uso" };
       return res.redirect("/me/update");
     }
 
     checkConflict = await User.findOne({ where: { email: req.body.email } });
     if (checkConflict) {
-      req.session.error = "ERRO: Este email já está em uso";
+      req.session.message = { class: "danger", text: "ERRO: Este email já está em uso" };
       return res.redirect("/me/update");
     }
 
@@ -78,14 +78,14 @@ module.exports = {
 
     await User.update(user, { where: { email: req.session.email } });
     req.session.email = user.email;
-    req.session.success = "Informações atualizadas com sucesso";
+    req.session.message = { class: "success", text: "Informações atualizadas com sucesso" };
     res.redirect("/me/update");
   },
 
   async authenticateUser(req, res) {
     const user = await User.findOne({ where: { email: req.body.email } });
     if (!user) {
-      req.session.error = "ERRO: Usuário não encontrado";
+      req.session.message = { class: "danger", text: "ERRO: Usuário não encontrado" };
       return res.redirect("/forms");
     }
 
@@ -94,7 +94,7 @@ module.exports = {
       req.session.email = user.email;
       res.redirect("/app");
     } else {
-      req.session.error = "ERRO: Credenciais incorretas";
+      req.session.message = { class: "danger", text: "ERRO: Credenciais incorretas" };
       return res.redirect("/forms");
     }
   },

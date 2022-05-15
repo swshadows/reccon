@@ -8,7 +8,6 @@
     - [NPM](#npm)
     - [MariaDB](#mariadb)
     - [Bootstrap](#bootstrap)
-    - [Sweet Alerts](#sweet-alerts)
 
 ## Equipe
 
@@ -26,7 +25,7 @@ A equipe foi subdividida em vários setores para facilitar tanto o desenvolvimen
 | Iderlan Lira    | Articulação do Artigo | Artigo e Banner              |
 | Thiago Leão     | Confecção das Camisas | Camisas                      |
 | Rafael Pereira  | Confecção das Camisas | Camisas                      |
-| Stefanny Lohany | Causas Sociais        | Causas Social                |
+| Stefanny Lohany | Causas Sociais        | Causas Sociais               |
 | Oscar Oliveira  | ----                  | ----                         |
 | Samuel Gomes    | ----                  | ----                         |
 | Fernando Cosme  | ----                  | ----                         |
@@ -65,14 +64,16 @@ No geral, a equipe **Reccon** trabalhou ativamente no projeto para criar uma pla
 
 Os pacotes utilizados foram os seguintes:
 
-- [express](https://www.npmjs.com/package/express) - Express é um framework para Node.js para facilitar o desenvolvimento de [servidores Web](https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/What_is_a_web_server).
-- [express-session](https://www.npmjs.com/package/express-session) - Express-session é um [middleware](https://www.redhat.com/pt-br/topics/middleware/what-is-middleware) para o Express, que permite criar sessões persistentes no servidor, como por exemplo, para um sistema de login.
-- [nodemon](https://www.npmjs.com/package/nodemon) - Nodemon é um pacote que possibilita a abrir um servidor Node.js/Express na máquina local que se atualiza automaticamente com mudanças, utilizado para [debuggar e testar mudanças](https://www.hostgator.com.br/blog/debug-desenvolvimento-web/).
-- [dotenv](https://www.npmjs.com/package/dotenv) - Dotenv é um pacote que possibilita utilizar [variáveis de ambiente](https://pt.wikipedia.org/wiki/Vari%C3%A1vel_de_ambiente) em um arquivo `.env`, facilitando a definição das mesmas e adaptando a aplicação para múltiplos programadores.
-- [bcrypt](https://www.npmjs.com/package/bcrypt) - Bcrypt é um pacote que possibilita a [encriptação e decriptação](https://www.voitto.com.br/blog/artigo/o-que-e-hash-e-como-funciona) segura de senhas a partir de algoritmo
-- [mariadb](https://www.npmjs.com/package/mariadb) - Mariadb é um pacote que possibilita a conexão com o bancos de dados SQL MariaDB em uma aplicação Node.js.
-- [sequelize](https://www.npmjs.com/package/sequelize) - Sequelize é um pacote que automatiza o [CRUD](https://developer.mozilla.org/pt-BR/docs/Glossary/CRUD) em um banco de dados, a partir de [modelos e funções predefinidas](https://www.lewagon.com/pt-BR/blog/o-que-e-padrao-mvc).
-- [ejs](https://www.npmjs.com/package/ejs) - EJS (ou Embedded JavaScript Templates) é um pacote que fornece uma [template engine](https://www.treinaweb.com.br/blog/o-que-e-template-engine) para o Node.js, permitindo a criação de [páginas dinâmicas](https://www.agenciamacan.com.br/blog/site-dinamico-vs-estatico-qual-a-diferenca-entre-eles).
+- Pacotes do App
+  - [express](https://www.npmjs.com/package/express) - Express é um framework para Node.js para facilitar o desenvolvimento de [servidores Web](https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/What_is_a_web_server).
+  - [cookie-session](https://www.npmjs.com/package/cookie-session) - Cookie-session é um [middleware](https://www.redhat.com/pt-br/topics/middleware/what-is-middleware) para o Express, que permite criar sessões persistentes no como cookies no navegador do usuário para um sistema de login, como exemplo.
+  - [bcrypt](https://www.npmjs.com/package/bcrypt) - Bcrypt é um pacote que possibilita a [encriptação e decriptação](https://www.voitto.com.br/blog/artigo/o-que-e-hash-e-como-funciona) segura de senhas a partir de algoritmo
+  - [mariadb](https://www.npmjs.com/package/mariadb) - Mariadb é um pacote que possibilita a conexão com o bancos de dados SQL MariaDB em uma aplicação Node.js.
+  - [sequelize](https://www.npmjs.com/package/sequelize) - Sequelize é um pacote que automatiza o [CRUD](https://developer.mozilla.org/pt-BR/docs/Glossary/CRUD) em um banco de dados, a partir de [modelos e funções predefinidas](https://www.lewagon.com/pt-BR/blog/o-que-e-padrao-mvc).
+  - [ejs](https://www.npmjs.com/package/ejs) - EJS (ou Embedded JavaScript Templates) é um pacote que fornece uma [template engine](https://www.treinaweb.com.br/blog/o-que-e-template-engine) para o Node.js, permitindo a criação de [páginas dinâmicas](https://www.agenciamacan.com.br/blog/site-dinamico-vs-estatico-qual-a-diferenca-entre-eles).
+- Pacotes Usados para Desenvolvimento
+  - [nodemon](https://www.npmjs.com/package/nodemon) - Nodemon é um pacote que possibilita a abrir um servidor Node.js/Express na máquina local que se atualiza automaticamente com mudanças, utilizado para [debuggar e testar mudanças](https://www.hostgator.com.br/blog/debug-desenvolvimento-web/).
+  - [dotenv](https://www.npmjs.com/package/dotenv) - Dotenv é um pacote que possibilita utilizar [variáveis de ambiente](https://pt.wikipedia.org/wiki/Vari%C3%A1vel_de_ambiente) em um arquivo `.env`, facilitando a definição das mesmas e adaptando a aplicação para múltiplos programadores.
 
 ### MariaDB
 
@@ -89,11 +90,3 @@ Os pacotes utilizados foram os seguintes:
 - Descrição: [BootstrapCSS](https://getbootstrap.com/) (ou simplesmente Bootstrap) é um framework CSS voltado para agilizar a criação de páginas Web através de estilos e componentes pré-prontos, sendo direcionado para **serviços frontend**.
 - Uso: Foram utilizadas as suas funções JavaScript e componentes e estilos CSS em conjunto para criar a componentes, estilos e modelos para a aplicação.
 - Justificativa: O uso do Bootstrap se dá às sugestões dos devs frontend da equipe, tanto no fator tempo quanto conhecimento dos mesmos, sendo adequado na aplicação por sua praticidade, facilidade e agilidade de desenvolvimento.
-
-### Sweet Alerts
-
----
-
-- Descrição: [SweetAlerts](https://sweetalert2.github.io/) é uma [biblioteca JavaScript](https://pt.khanacademy.org/computing/computer-programming/html-css-js/using-js-libraries-in-your-webpage/a/whats-a-js-library) voltado para utilização de componentes [Modals](http://lucasmaiaesilva.com.br/posts/criando-modal-simples-com-html-e-css/) flexíveis e dinâmicos.
-- Uso: A lib foi usada para criar alertas e avisos na aplicação e funcionalidades dinâmicas para alertar os usuários com os componentes.
-- Justificativa: Foi utilizado a lib para agilizar a criação de componentes modals responsivos e alertas e deixar a aplicação mais bonita.

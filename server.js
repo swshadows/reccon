@@ -8,6 +8,7 @@ const db = require("./database/db");
 app.set("template engine", "ejs");
 app.set("views", __dirname + "/views");
 app.use(express.static(__dirname + "/public"));
+app.use("/i", express.static(__dirname + "/database/img"));
 
 const port = process.env.SERVER_PORT || 3000;
 app.listen(port, (req, res) => {
