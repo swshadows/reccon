@@ -26,14 +26,15 @@ module.exports = {
   },
 
   async postAd(req, res) {
-    const validateImage = req.file.originalname;
     const acceptedFormats = [".png", ".webp", ".jpeg", ".jpg"];
+
     for (i in acceptedFormats) {
+      if (path.extname(req.file.originalname) == acceptedFormats[i]) break;
+
       if (i >= acceptedFormats.length) {
         req.session.message = { class: "danger", text: "ERRO: O formato do arquivo enviado é inválido, somente aceitamos os formatos .png, .jpeg, .jpg e .webp" };
         return res.redirect("/app/create_ad");
       }
-      if (path.extname(validateImage) == acceptedFormats[i]) break;
     }
 
     let imgString;

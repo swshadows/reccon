@@ -6,9 +6,11 @@ Uma aplicação Web com backend e frontend funcionais desenvolvidas pela equipe 
 
 ## Equipe de Desenvolvimento
 
-[@swshadows](https://github.com/swshadows) - Backend Node.js / Design
-
-[@leonardosilva97](https://github.com/leonardosilva97) - Frontend Bootstrap
+| Nome                                                   | Função                   |
+| ------------------------------------------------------ | ------------------------ |
+| [@swshadows](https://github.com/swshadows)             | Backend Node.js / Design |
+| [@leonardosilva97](https://github.com/leonardosilva97) | Frontend Bootstrap       |
+| [@EndrewDiaz](https://github.com/EndrewDias)           | Frontend Bootstrap       |
 
 Sobre a equipe geral, veja a [documentação](DOCUMENTATION.md#equipe)
 
