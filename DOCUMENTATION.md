@@ -18,10 +18,10 @@ A equipe foi subdividida em vários setores para facilitar tanto o desenvolvimen
 | Nome            | Função                | Equipe                       |
 | --------------- | --------------------- | ---------------------------- |
 | Natanael Falcão | Organização Geral     | Organização Geral            |
-| Joelson Lima    | Backend / Design      | Desenvolvimento da Aplicação |
+| Joelson Lima    | Dev Backend / Design  | Desenvolvimento da Aplicação |
 | David Teixeira  | Suporte ao Backend    | Desenvolvimento da Aplicação |
-| Leonardo Chagas | Frontend              | Desenvolvimento da Aplicação |
-| Endrew Diaz     | Suporte ao Frontend   | Desenvolvimento da Aplicação |
+| Leonardo Chagas | Dev Frontend          | Desenvolvimento da Aplicação |
+| Endrew Diaz     | Dev Frontend          | Desenvolvimento da Aplicação |
 | Iderlan Lira    | Articulação do Artigo | Artigo e Banner              |
 | Thiago Leão     | Confecção das Camisas | Camisas                      |
 | Rafael Pereira  | Confecção das Camisas | Camisas                      |
@@ -67,13 +67,15 @@ Os pacotes utilizados foram os seguintes:
 - Pacotes do App
   - [express](https://www.npmjs.com/package/express) - Express é um framework para Node.js para facilitar o desenvolvimento de [servidores Web](https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/What_is_a_web_server).
   - [cookie-session](https://www.npmjs.com/package/cookie-session) - Cookie-session é um [middleware](https://www.redhat.com/pt-br/topics/middleware/what-is-middleware) para o Express, que permite criar sessões persistentes no como cookies no navegador do usuário para um sistema de login, como exemplo.
-  - [bcrypt](https://www.npmjs.com/package/bcrypt) - Bcrypt é um pacote que possibilita a [encriptação e decriptação](https://www.voitto.com.br/blog/artigo/o-que-e-hash-e-como-funciona) segura de senhas a partir de algoritmo
+  - [bcrypt](https://www.npmjs.com/package/bcrypt) - Bcrypt é um pacote que possibilita a [encriptação e decriptação](https://www.voitto.com.br/blog/artigo/o-que-e-hash-e-como-funciona) segura de senhas a partir de algoritmo.
   - [mariadb](https://www.npmjs.com/package/mariadb) - Mariadb é um pacote que possibilita a conexão com o bancos de dados SQL MariaDB em uma aplicação Node.js.
+  - [multer](https://www.npmjs.com/package/multer) - Multer é um pacote que permite o armazenamento de arquivos enviados por formulários no servidor, por várias razões, a principal sendo armazenar o caminho de imagens no banco de dados
   - [sequelize](https://www.npmjs.com/package/sequelize) - Sequelize é um pacote que automatiza o [CRUD](https://developer.mozilla.org/pt-BR/docs/Glossary/CRUD) em um banco de dados, a partir de [modelos e funções predefinidas](https://www.lewagon.com/pt-BR/blog/o-que-e-padrao-mvc).
   - [ejs](https://www.npmjs.com/package/ejs) - EJS (ou Embedded JavaScript Templates) é um pacote que fornece uma [template engine](https://www.treinaweb.com.br/blog/o-que-e-template-engine) para o Node.js, permitindo a criação de [páginas dinâmicas](https://www.agenciamacan.com.br/blog/site-dinamico-vs-estatico-qual-a-diferenca-entre-eles).
 - Pacotes Usados para Desenvolvimento
   - [nodemon](https://www.npmjs.com/package/nodemon) - Nodemon é um pacote que possibilita a abrir um servidor Node.js/Express na máquina local que se atualiza automaticamente com mudanças, utilizado para [debuggar e testar mudanças](https://www.hostgator.com.br/blog/debug-desenvolvimento-web/).
   - [dotenv](https://www.npmjs.com/package/dotenv) - Dotenv é um pacote que possibilita utilizar [variáveis de ambiente](https://pt.wikipedia.org/wiki/Vari%C3%A1vel_de_ambiente) em um arquivo `.env`, facilitando a definição das mesmas e adaptando a aplicação para múltiplos programadores.
+  - [mysql2](https://www.npmjs.com/package/mysql2) - MySQL2 que permite a conexão com o banco de dados MySQL. Foi utilizado como dependencia dev pelo motivo de alguns devs do time necessitarem do MySQL e não poderem trocar por MariaDB.
 
 ### MariaDB
 

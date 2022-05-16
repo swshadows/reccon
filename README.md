@@ -35,6 +35,7 @@ Sobre a equipe geral, veja a [documentação](DOCUMENTATION.md#equipe)
   ```c
   DB_USER="usuário do banco"
   DB_PASS="senha do banco"
+  DB_DIALECT="mysql ou mariadb"
   SERVER_PORT="porta do servidor"
   SESSION_SECRET="chave para sessões"
   ```

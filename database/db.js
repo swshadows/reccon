@@ -1,7 +1,7 @@
 const dotenv = require("dotenv").config();
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize("reccon", process.env.DB_USER, process.env.DB_PASS, {
-  dialect: "mysql",
+  dialect: process.env.DB_DIALECT,
   host: "localhost",
   logging: false, // Remover para debugar no console
 });

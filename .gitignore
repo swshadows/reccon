@@ -1,3 +1,7 @@
+# Ignored
 .env
 node_modules
-database/img/*
+database/img/*.*
+
+# Not ignored
+!database/img/.gitkeep

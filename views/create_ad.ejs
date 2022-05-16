@@ -41,6 +41,9 @@
         </div>
       </div>
     </nav>
+    <% if (locals.message) { %>
+      <div class="alert alert-<%=message.class %>" role="alert"><%=message.text; %></div>
+    <% } %>
 
       <!--Formulario de Cadastro-->
       <div class="container">
@@ -65,7 +68,7 @@
                                    <label for="image">
                                      <a class="navbar-brand" href="#"><img src="/assets/icon.svg" alt=""></a>
                                      <a class="navbar-brand" href="#"><img src="/assets/text.svg" alt=""></a>
-                                     <input type="file" name="image" >
+                                     <input type="file" name="image" accept=".jpg,.png,.jpeg,.webp, image/webp, image/jpeg, image/png" >
                                     </label>
                                  </div>
                              </div>

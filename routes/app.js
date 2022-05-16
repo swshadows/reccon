@@ -29,6 +29,11 @@ router.get("/", checkNotLogged, async (req, res) => {
 
 router.get("/create_ad", checkNotLogged, async (req, res) => {
   const addresses = await Address.findAll();
+  if (req.session.message) {
+    const message = req.session.message;
+    req.session.message = null;
+    return res.render("create_ad.ejs", { address: addresses, message: message });
+  }
   res.render("create_ad.ejs", { address: addresses });
 });
 

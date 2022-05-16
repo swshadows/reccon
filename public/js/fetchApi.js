@@ -1,4 +1,5 @@
 const buttonApi = document.querySelectorAll(".button-api");
+const body = document.getElementById("bairros-body");
 
 buttonApi.forEach((e) => {
   e.addEventListener("click", () => {
@@ -7,16 +8,22 @@ buttonApi.forEach((e) => {
 });
 
 async function fetchFromAPI(query) {
+  body.innerHTML = `
+  <div class="spinner-border text-info" role="status">
+    <span class="sr-only"></span>
+  </div>
+  <span>Carregando anuncios...</span>`;
   await fetch("/api?name=" + query)
     .then((res) => res.json())
     .then((res) => renderPage(res));
 }
 
 function renderPage(res) {
-  const body = document.getElementById("bairros-body");
   body.innerHTML = "";
-  if (res.length == 0) {body.innerHTML = "Não temos anuncios nesse bairro, volte mais tarde"
-return};
+  if (res.length == 0) {
+    body.innerHTML = "Não temos anuncios nesse bairro, volte mais tarde";
+    return;
+  }
   for (i in res) {
     body.innerHTML += `
     <div class="col d-flex justify-content-center py-2">
