@@ -15,7 +15,8 @@ async function fetchFromAPI(query) {
 function renderPage(res) {
   const body = document.getElementById("bairros-body");
   body.innerHTML = "";
-  if (res.length == 0) body.innerHTML = "Não temos anuncios nesse bairro, volte mais tarde";
+  if (res.length == 0) {body.innerHTML = "Não temos anuncios nesse bairro, volte mais tarde"
+return};
   for (i in res) {
     body.innerHTML += `
     <div class="col d-flex justify-content-center py-2">

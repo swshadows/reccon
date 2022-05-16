@@ -47,6 +47,8 @@
 
 .eye-pass button{
     width: 20px !important;
+    color: #1fec8c;
+    border: #1fec8c ;
 }
 
 .form-group input, select{
@@ -62,6 +64,13 @@
     background: #ffffff;
     box-shadow:  20px 20px 60px #bebebe,
     -20px -20px 60px #ffffff;
+}
+
+@media only screen and (max-width: 600px){
+    .senha{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 

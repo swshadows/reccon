@@ -8,7 +8,7 @@ Uma aplicação Web com backend e frontend funcionais desenvolvidas pela equipe 
 
 [@swshadows](https://github.com/swshadows) - Backend Node.js / Design
 
-[@Suevo404](https://github.com/Suevo404) - Frontend Bootstrap
+[@leonardosilva97](https://github.com/leonardosilva97) - Frontend Bootstrap
 
 Sobre a equipe geral, veja a [documentação](DOCUMENTATION.md#equipe)
 

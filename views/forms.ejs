@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>Login</title>
 </head>
-<body class="primary-bg-color">
+<body class="primary-bg-color h-100">
 
     <!--NavBar do projeto RECCON-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 px-1 greem-bg-color">
@@ -39,7 +39,7 @@
               </li>
             </ul>
             <form class="d-flex">
-              <a href="/form/register"><button type="button" class="btn btn-primary btn-lg secundary-bg-color">Login/Cadastro</button></a>
+              <a href="/"><button type="button" class="btn btn-primary btn-lg secundary-bg-color">Voltar ao Inicio</button></a>
             </form>
           </div>
         </div>
@@ -87,7 +87,7 @@
                     <form method="post" action="/forms/login" class="d-flex justify-content-center formulario radius">
                     <div class="form-group py-4 px-4">
                         <input type="email" name="email" id="email" placeholder="Digite Seu Email" required>
-                        <input type="password" name="password" id="password" placeholder="Digite sua Senha" required>
+                        <input type="password" name="password" id="passwordlogin" placeholder="Digite sua Senha" required>
                         <div class="eye-pass ">
                             <button type="button" id="btnLogin" class="btn btn-primary btn-sm secundary-bg-color"></button>
                             <label for="mostrarSenha"> Mostrar Senha</label>
@@ -119,7 +119,7 @@
 
       <!--script do mostrar senha-->
       <script src="/js/mostrarSenhaForm.js"></script>
-      <script src="/js/mostrarSenhaLogin.js"></script>
+      <script src="js/mostrarSenhaLogin.js"></script>
     <!--Bootstrap Javascript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

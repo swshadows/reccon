@@ -73,6 +73,16 @@ body{
     background-color: #5b3690;
 }
 
+/*links de git e figma*/
+
+.links{
+    width: 100px;
+}
+
+.bi-github::before {
+    width: 50px;
+}
+
 
 
 
