@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+    <!--css do projeto-->
+    <link rel="stylesheet" href="meus-anuncios.css">
+    <!--Bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <title>Anuncios</title>
+</head>
+<body class="primary-bg-color">
+
+    <!--NavBar do projeto RECCON-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 px-1 greem-bg-color fixed-top">
+        <div class="container img-left">
+          <a class="navbar-brand" href="/public/Inovatec/index.html"><img src="/public/Inovatec/assets/app_icon.png" alt=""></a>
+          <a class="navbar-brand" href="/public/Inovatec/index.html"><img src="/public/Inovatec/assets/app_name.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+              <li class="nav-item dropdown d-flex gap-2" id="sobre-nos">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Opções de conta
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/public/Inovatec/optUsuario/opt.html">Alterar informções</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Sair</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <a href="/doacao/doacao.html"><button type="button" class="btn btn-primary btn-lg secundary-bg-color">Publicar</button></a>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <!--botoes bairros-->
+      <div class="container fff-bg-color py-3 px-3 radius">
+          <div class="row overflow">
+            <!--cards de anuncios-->
+              <div class="col-md-12">
+                <h1 class="text-center">Meus Anuncios</h1>
+                <div class="row row-cols-1 row-cols-md-4 px-5 overflow-auto">
+                  <!--Inicio do card-->
+                    <div class="col d-flex justify-content-center py-2">
+                      <div class="card h-200">
+                        <img src="/public/Inovatec/assets/thumbnail.png" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                          <h5 class="card-title">Titulo do anuncio</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia consequuntur architecto, autem magnam repellendus, suscipit, alias laboriosam illum repudiandae possimus voluptatibus a facere. Rerum nam libero ipsum ducimus vel rem!</p>
+                          <div class="editar d-flex justify-content-between">
+                            <button type="button" id="btn" class="btn btn-primary btn-sm secundary-bg-color"><i class="bi bi-trash"></i>Excluir anuncio</button>
+                            <a href="#">Editar</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div><!--Fim do card--> 
+
+                  </div>
+              </div>
+          </div>
+      </div>
+
+            
+
+      <!--Footer do projeto-->
+      <footer id="footer" class="fixed-bottom greem-bg-color">
+        <div class="container-fluid">
+          <div class="container">
+          <div class="row">
+            <div class="col-md-12 d-flex justify-content-between py-3">
+              <span>Todos os direitos reservados &copy;</span>
+              <span>RECCON 2022</span>
+            </div>
+          </div>
+        </div>
+        </div>
+      </footer>
+
+
+
+    <!--Bootstrap Javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+    crossorigin="anonymous"></script>
+</body>
+</html>

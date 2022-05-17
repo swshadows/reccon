@@ -30,7 +30,8 @@
 /* estilizando o formulario*/
 
 .formulario {
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .form-group {
@@ -53,12 +54,18 @@ select {
   outline: none;
 }
 
+.botoes{
+  width: 100%;
+}
+
 /*Classe padrao para sombra*/
 .radius {
   border-radius: 20px;
   background: #ffffff;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 }
+
+
 
 @media only screen and (max-width: 600px) {
   .senha {

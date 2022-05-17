@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+
+* {
+    font-family: 'Jockey One', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*paleta de cores do projeto*/
+.primary-bg-color{
+    background-color: #f5ffee !important;
+}
+
+.secundary-bg-color{
+    background-color: #5b3690 !important;
+}
+
+.greem-bg-color{
+    background-color: #1fec8c !important;
+}
+
+.last-bg-color{
+    background-color: #e28413 !important;
+}
+
+.fff-bg-color{
+    background-color: #fff;
+    border-radius: 20px;
+}
+/*paleta de cores do projeto*/
+
+
+
+
+/* estilizando o formulario*/
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    
+    
+}
+
+.eye-pass button{
+    width: 20px !important;
+}
+
+.form-group input, select{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+.editar button , .editar i, .editar a{
+    text-decoration: none;
+    color: #1fec8c !important;
+    padding: 2px;
+}
+
+.editar a:hover{
+    text-decoration: underline;
+}
+
+.radius{
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+}
+
+.overflow{
+    height: 500px;
+    overflow-x: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
