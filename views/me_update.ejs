@@ -55,7 +55,7 @@
           <div class="row">
               <div class="col-md-12">
                 <div class="fff-bg-color">
-                    <form action="/me/update/send" class="formulario text-center radius" method="post">
+                    <form action="/me/update/update?_method=put" class="formulario text-center radius" method="post">
                         <h2>Bem-vindo, <%=userinfo.name %></h2>
                     <div class="form-group py-4 px-4">
                         <!--input do nome-->
@@ -74,12 +74,15 @@
                           <label for="phone"> Telefone atual: <%= userinfo.phone %></label>
                       </div>
                         <!--alterar bairros-->
-                        <select name="adress" id="adress" required>
-                            <option value="" disabled selected="selected">Alterar Seu Bairro</option>
-                            <% for(let i = 0; i < address.length; i++) { %>
-                              <option value=<%=address[i].dataValues.id%>><%= address[i].dataValues.name %></option>
-                            <% } %>
-                        </select>
+                        <div class="d-flex gap-2">
+                          <select name="adress" id="adress" required>
+                              <option value="" disabled selected="selected">Alterar Seu Bairro</option>
+                              <% for(let i = 0; i < address.length; i++) { %>
+                                <option value=<%=address[i].dataValues.id%>><%= address[i].dataValues.name %></option>
+                              <% } %>
+                          </select>
+                          <label for="address">Bairro atual: <%= userinfo.address.dataValues.name%></label>
+                        </div>
                         <!--input das senhas-->
                         <div class="senha d-md-flex gap-3">
                             <input type="password" name="password" id="password" placeholder="Digite sua senha atual" required>
@@ -91,35 +94,37 @@
                                 </div>
                         </div>
                         <div class="d-flex justify-content-between botoes">
-                          <input type="submit" id="btn" class="btn btn-primary btn-sm secundary-bg-color" value="Salvar alterações">
+                          <input type="submit" name="update" id="btn" class="btn btn-primary btn-sm secundary-bg-color" value="Salvar alterações">
                           <!-- Button trigger modal -->
                           <button type="button" class="btn btn-primary btn-sm secundary-bg-color" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Excluir Conta
                           </button>
 
-                          <!-- Modal -->
-                          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Ola :{Usuario}</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                  Deseja mesmo excluir sua conta, todos os seus dados e anuncios 
-                                  seram perdidos
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                  <button type="button" class="btn btn-primary secundary-bg-color">Excluir</button>
-                                </div>
-                              </div>
+
+                        </div>
+                      </form>
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Ola <%= userinfo.name %></h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Deseja mesmo excluir sua conta? Todos os seus dados e anuncios
+                              seram excluidos permanentemente
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                              <form action="/me/update/delete?_method=delete" method="post">
+                                <input type="submit" class="btn btn-primary secundary-bg-color" name="delete" value="Excluir">
+                              </form>
                             </div>
                           </div>
                         </div>
-                        
+                      </div>
                     </div>
-                    </form>
                 </div>
               </div>
           </div>

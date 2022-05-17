@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
+const Ads = require("../models/Ad");
 
 module.exports = {
   async listAllUsers(req, res) {
@@ -37,11 +38,15 @@ module.exports = {
   },
 
   async deleteUser(req, res) {
-    const user = await User.findOne({ where: { email: req.body.email } });
-    if (!user) return res.status(400).json({ message: "Usuário não existente no banco de dados" });
+    const user = await User.findOne({ where: { email: req.session.email } });
+    const ads = Ads.destroy({
+      where: { fk_user: user.id },
+    });
+    user.destroy();
 
-    await user.destroy();
-    return res.json(user);
+    req.session.logged = false;
+    req.session.message = { class: "success", text: "A conta e todos os anuncios foram apagados com sucesso" };
+    res.redirect("/");
   },
 
   async updateUser(req, res) {
@@ -57,13 +62,13 @@ module.exports = {
     }
 
     let checkConflict = await User.findOne({ where: { phone: req.body.phone } });
-    if (checkConflict) {
+    if (checkConflict && findUser.phone != checkConflict.phone) {
       req.session.message = { class: "danger", text: "ERRO: Este telefone já está em uso" };
       return res.redirect("/me/update");
     }
 
     checkConflict = await User.findOne({ where: { email: req.body.email } });
-    if (checkConflict) {
+    if (checkConflict && findUser.email != checkConflict.email) {
       req.session.message = { class: "danger", text: "ERRO: Este email já está em uso" };
       return res.redirect("/me/update");
     }

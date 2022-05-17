@@ -6,7 +6,7 @@ const Address = require("../models/Address");
 const { checkNotLogged } = require("../middleware/checkAuth");
 
 router.get("/update", checkNotLogged, async (req, res) => {
-  const user = await User.findOne({ where: { email: req.session.email } });
+  const user = await User.findOne({ where: { email: req.session.email }, include: [{ model: Address, required: true }] });
   const addresses = await Address.findAll();
   if (req.session.message) {
     const message = req.session.message;
@@ -21,5 +21,7 @@ router.get("/logoff", checkNotLogged, (req, res) => {
   res.redirect("/");
 });
 
-router.post("/update/send", userController.updateUser);
+router.put("/update/update", userController.updateUser);
+router.delete("/update/delete", userController.deleteUser);
+
 module.exports = router;
