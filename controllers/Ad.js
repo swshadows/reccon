@@ -1,4 +1,3 @@
-const res = require("express/lib/response");
 const Ad = require("../models/Ad");
 const User = require("../models/User");
 const path = require("path");
@@ -17,7 +16,7 @@ module.exports = {
           model: Address,
           required: true,
           attributes: ["name"],
-          where: { name: req.query.name },
+          where: { id: req.query.id },
         },
       ],
       attributes: ["title", "description", "image_path"],
@@ -31,7 +30,7 @@ module.exports = {
     for (i in acceptedFormats) {
       if (path.extname(req.file.originalname) == acceptedFormats[i]) break;
 
-      if (i >= acceptedFormats.length) {
+      if (i >= acceptedFormats.length - 1) {
         req.session.message = { class: "danger", text: "ERRO: O formato do arquivo enviado é inválido, somente aceitamos os formatos .png, .jpeg, .jpg e .webp" };
         return res.redirect("/app/create_ad");
       }

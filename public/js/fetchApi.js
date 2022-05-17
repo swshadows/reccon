@@ -3,7 +3,7 @@ const body = document.getElementById("bairros-body");
 
 buttonApi.forEach((e) => {
   e.addEventListener("click", () => {
-    fetchFromAPI(e.innerHTML);
+    fetchFromAPI(e.dataset.sqlid);
   });
 });
 
@@ -13,7 +13,7 @@ async function fetchFromAPI(query) {
     <span class="sr-only"></span>
   </div>
   <span>Carregando anuncios...</span>`;
-  await fetch("/api?name=" + query)
+  await fetch("/api?id=" + query)
     .then((res) => res.json())
     .then((res) => renderPage(res));
 }

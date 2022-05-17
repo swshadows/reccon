@@ -48,7 +48,7 @@
         <div class="col-md-2 d-flex justify-content-around flex-column gap-2 btn-bairro overflow-auto">
           <p class="h2 align-self-center">Bairros</p>
           <% for(let i = 0; i < address.length; i++) { %>
-          <button class="button-api btn btn-primary btn-sm secundary-bg-color"><%= address[i].dataValues.name %></button>
+          <button data-sqlid="<%= address[i].dataValues.id %>" class="button-api btn btn-primary btn-sm secundary-bg-color"><%= address[i].dataValues.name %></button>
           <% } %>
         </div>
 
@@ -68,8 +68,7 @@
                   <div class="contato">
                     <a href="https://api.whatsapp.com/send?phone=<%=ads[i].dataValues.user.dataValues.phone %>&text=Olá! Estou%20interessado%20na%20sua%20doação%E2%80%9D" target="_blank"
                       ><button type="button" id="btn" class="btn btn-primary btn-sm secundary-bg-color"><i class="bi bi-whatsapp"></i>Contatar doador</button>
-                    </a
-                    >
+                    </a>
                   </div>
                 </div>
               </div>
