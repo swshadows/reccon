@@ -15,9 +15,11 @@
   <body class="primary-bg-color">
     <!--NavBar do projeto RECCON-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 px-1 greem-bg-color">
-      <div class="container img-left">
-        <a class="navbar-brand" href="/"><img src="assets/app_icon.png" alt="" /></a>
-        <a class="navbar-brand" href="/"><img src="assets/app_name.png" alt="" /></a>
+      <div class="container h-navbar">
+        <div class="images">
+          <a class="navbar-brand" href="/"><img src="/assets/app_icon.png" alt=""></a>
+          <a class="navbar-brand" href="/"><img src="/assets/app_name.png" alt=""></a>
+        </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -53,8 +55,8 @@
         </div>
 
         <!--cards de anuncios-->
-        <div class="col-md-10 d-flex justify-content-around flex-column overflow-auto">
-          <p class="h2 align-self-center">Anuncios</p>
+        <div class="col-md-10 d-flex justify-content-around flex-column overflow">
+          <p class="h2 text-center">Anuncios</p>
           <div id="bairros-body" class="row row-cols-1 row-cols-md-4 px-5">
             <!-- ? Card dinâmico -->
             <% for(let i=0; i < ads.length; i++) { %>
@@ -96,7 +98,7 @@
     </div>
 
     <!--Footer do projeto-->
-    <footer id="footer" class="mt-1 greem-bg-color">
+    <footer id="footer" class="fixed-bottom mt-1 greem-bg-color">
       <div class="container-fluid">
         <div class="container">
           <div class="row">

@@ -3,9 +3,7 @@
 * {
     font-family: 'Jockey One', sans-serif;
 }
-body{
-   
-}
+
 /*paleta de cores do projeto*/
 .primary-bg-color{
     background-color: #f5ffee !important;
@@ -25,9 +23,30 @@ body{
 /*paleta de cores do projeto*/
 
 
-.img-left img{
-    width: 100px;
-}
+.h-navbar{
+    height: 10vh;
+  }
+  
+  .images{
+    height: 100%;
+    width: 30%;
+  }
+  
+  .images img{
+    width: 80px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .images {
+      display: flex;
+      align-items: center;
+    }
+  
+    .h-navbar{
+      height: 10%;
+      display: flex;
+    }
+  }
 
 /* estilizando o card*/
 .reccon{
@@ -77,11 +96,30 @@ body{
 
 .links{
     width: 100px;
+    font-size: 2rem;
 }
 
-.bi-github::before {
-    width: 50px;
+.links i , .links a{
+    color: #f7f7f7;
+    text-decoration: none;
 }
+
+.links i:hover , .links a:hover{
+    color: #5b3690;
+}
+
+.copy{
+    width: 30%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .copy{
+        width: 50px;
+    }
+  }
+
+
 
 
 

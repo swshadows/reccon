@@ -18,25 +18,30 @@
   </head>
   <body class="primary-bg-color">
     <!--NavBar do projeto RECCON-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light py-2 px-1 greem-bg-color">
-      <div class="container img-left">
-        <a class="navbar-brand" href="./indexPrimary.ejs"><img src="/assets/app_icon.png" alt="" /></a>
-        <a class="navbar-brand" href="./indexPrimary.ejs"><img src="/assets/app_name.png" alt="" /></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 px-1 greem-bg-color">
+      <div class="container h-navbar">
+        <div class="images">
+          <a class="navbar-brand" href="/"><img src="/assets/app_icon.png" alt=""></a>
+          <a class="navbar-brand" href="/"><img src="/assets/app_name.png" alt=""></a>
+        </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown d-flex gap-2" id="sobre-nos">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Sobre Nos </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <p class="text-md-start">alguma coisa</p>
-              </ul>
-            </li>
-            <li class="nav-item dropdown d-flex gap-2" id="sobre-nos">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Sobre o projeto </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <p class="text-md-start">Tenatando ganhar nossos 5 pontos</p>
+                <li><a class="dropdown-item" href="/me/update">Tecnologias utilizadas</a></li>
+                <li><a class="dropdown-item" href="/me/update">A equipe</a></li>
+                <li><a class="dropdown-item" href="/me/update">FAQ</a></li>
+                <li><a class="dropdown-item" href="/me/update">Pesquisas e entrevistas</a></li>
+                <% if (!logged) { %>
+  
+                  <% } else { %>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="/me/logoff">Sair</a></li>
+                  <% } %>
               </ul>
             </li>
           </ul>
@@ -111,17 +116,21 @@
     </div>
 
     <!--Footer do projeto-->
-    <footer id="footer" class="mt-1 greem-bg-color">
+    <footer id="footer" class="mt-5 greem-bg-color">
       <div class="container-fluid">
         <div class="container">
           <div class="row">
             <div class="col-md-12 d-flex justify-content-between py-3">
-              <p>Todos os direitos reservados &copy;</p>
-              <div class="links fa-3">
+              <div class="copy d-flex">
+                <p>Todos os direitos reservados &copy;</p>
+              </div>
+              <div class="links fa-3 text-center copy">
                 <a href="https://github.com/swshadows/reccon" target="_blank"><i class="devicon-github-original"></i></a>
                 <a href="https://www.figma.com/file/BfEmE4YiZ0DSRzPSP4g5Kw/reccon?node-id=0%3A1" target="_blank"><i class="devicon-figma-plain"></i></a>
               </div>
-              <p>RECCON 2022</p>
+              <div class="copy text-end">
+                <p>RECCON 2022</p>
+              </div>
             </div>
           </div>
         </div>

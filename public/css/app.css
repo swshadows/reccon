@@ -27,6 +27,30 @@
 }
 /*paleta de cores do projeto*/
 
+.h-navbar{
+    height: 10vh;
+  }
+  
+  .images{
+    height: 100%;
+    width: 30%;
+  }
+  
+  .images img{
+    width: 80px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .images {
+      display: flex;
+      align-items: center;
+    }
+  
+    .h-navbar{
+      height: 10%;
+      display: flex;
+    }
+  }
 
 
 
@@ -37,8 +61,6 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
-    
-    
 }
 
 .eye-pass button{
@@ -71,6 +93,24 @@
     font-size: 0.6rem;
 }
 
+.overflow{
+    height: 400px;
+    overflow-x: auto;
+}
+
+::-webkit-scrollbar{
+    background-color: #a06de7;
+    width: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #5b3690;
+    border-radius: 5px;
+}
 
 
 

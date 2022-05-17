@@ -26,6 +26,30 @@
 }
 /*paleta de cores do projeto*/
 
+.h-navbar{
+    height: 10vh;
+  }
+  
+  .images{
+    height: 100%;
+    width: 30%;
+  }
+  
+  .images img{
+    width: 80px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .images {
+      display: flex;
+      align-items: center;
+    }
+  
+    .h-navbar{
+      height: 10%;
+      display: flex;
+    }
+  }
 
 
 
