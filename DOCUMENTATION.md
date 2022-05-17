@@ -29,6 +29,7 @@ A equipe foi subdividida em vários setores para facilitar tanto o desenvolvimen
 | Oscar Oliveira  | ----                  | ----                         |
 | Samuel Gomes    | ----                  | ----                         |
 | Fernando Cosme  | ----                  | ----                         |
+| Denner Pantoja  | ----                  | ----                         |
 
 ## Objetivo do Projeto
 
