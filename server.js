@@ -10,7 +10,7 @@ require("./modules/routes")(app);
 require("./modules/database");
 
 app.set("template engine", "ejs");
-app.set("views", __dirname + "views");
+app.set("views", __dirname + "/views");
 app.use(express.static(__dirname + "/public"));
 app.use("/img", express.static(__dirname + "/database/img"));
 
