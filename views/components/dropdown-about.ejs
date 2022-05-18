@@ -1,0 +1,15 @@
+<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+  <li class="nav-item dropdown d-flex gap-2" id="sobre-nos">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Sobre o projeto </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item" href="#">Tecnologias utilizadas</a></li>
+      <li><a class="dropdown-item" href="#">A equipe</a></li>
+      <li><a class="dropdown-item" href="#">FAQ</a></li>
+      <li><a class="dropdown-item" href="#">Pesquisas e entrevistas</a></li>
+      <% if (!locals.logged) { %> <% } else { %>
+      <li><hr class="dropdown-divider" /></li>
+      <li><a class="dropdown-item" href="/me/logoff">Sair</a></li>
+      <% } %>
+    </ul>
+  </li>
+</ul>

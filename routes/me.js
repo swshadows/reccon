@@ -19,7 +19,12 @@ router.get("/update", checkNotLogged, async (req, res) => {
 });
 
 router.get("/my_ads", checkNotLogged, async (req, res) => {
-  const ads = await Ads.findAll({ include: [{ model: User, required: true, where: { email: req.session.email } }] });
+  const ads = await Ads.findAll({
+    include: [
+      { model: User, required: true, where: { email: req.session.email } },
+      { model: Address, required: true },
+    ],
+  });
   if (req.session.message) {
     const message = req.session.message;
     req.session.message = null;

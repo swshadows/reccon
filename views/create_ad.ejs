@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/css/create_ad.css">
     <!--Bootstrap icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <%- include('./components/favicon.ejs') %>
     <title>Doação</title>
 </head>
 <body class="primary-bg-color">
@@ -20,26 +21,17 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 px-1 greem-bg-color">
       <div class="container h-navbar">
         <div class="images">
-          <a class="navbar-brand" href="/"><img src="/assets/app_icon.png" alt=""></a>
-          <a class="navbar-brand" href="/"><img src="/assets/app_name.png" alt=""></a>
+          <%- include('./components/brand.ejs') %>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown d-flex gap-2" id="sobre-nos">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Opções de conta </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/me/update">Alterar informções</a></li>
-                <li><a class="dropdown-item" href="/me/my_ads">Meus anuncios</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="/me/logoff">Sair</a></li>
-              </ul>
-            </li>
-          </ul>
+          <%- include('./components/dropdown-account.ejs') %>
           <form class="d-flex">
-            <a href="/app"><button type="button" class="btn btn-primary btn-lg secundary-bg-color">Voltar ao app</button></a>
+            <a href="/app">
+              <%- include('./components/btn-returnapp') %>
+            </a>
           </form>
         </div>
       </div>
@@ -88,21 +80,7 @@
 
 
       <!--Footer do projeto-->
-      <footer id="footer" class="fixed-bottom greem-bg-color">
-        <div class="container-fluid ">
-          <div class="container">
-          <div class="row">
-            <div class="col-md-12 d-flex justify-content-between py-3">
-              <span>Todos os direitos reservados &copy;</span>
-              <span>RECCON 2022</span>
-            </div>
-          </div>
-        </div>
-        </div>
-      </footer>
-
-
-
+      <%- include('./components/footer.ejs') %>
 
     <!--Bootstrap Javascript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
