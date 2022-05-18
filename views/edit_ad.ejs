@@ -24,20 +24,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <%- include('./components/dropdown-account.ejs') %>
           <form class="d-flex">
-            <a href="/app"> <%- include('./components/btn-returnapp.ejs') %> </a>
+            <a href="/app"> <%- include('./components/btn-returnmyads.ejs') %> </a>
           </form>
         </div>
       </div>
     </nav>
-    <%- include('./components/message.ejs') %>
+    <%-include('./components/message.ejs') %>
 
     <!--Formulario de Cadastro-->
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="fff-bg-color">
-            <form action="/forms/create_ad" class="d-flex flex-column align-items-center formulario text-center radius" method="post" enctype="multipart/form-data">
-              <h2>Oque você está doando?</h2>
+            <form action="/me/my_ads/update/update?_method=put" class="d-flex flex-column align-items-center formulario text-center radius" method="post" enctype="multipart/form-data">
+              <h2>Editando anuncio: <%= ad.title %></h2>
+              <input type="hidden" name="id" value="<%=ad.id%>" />
               <div class="form-group py-4 px-4">
                 <input type="text" name="title" id="title" placeholder="Oque você esta doando" required />
                 <textarea name="description" id="description" cols="30" rows="5" placeholder="Descreva seu anuncio em detalhes (Max 200 Caracteres)" required></textarea>

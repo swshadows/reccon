@@ -1,46 +1,23 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/User");
+
 const userController = require("../controllers/User");
 const adController = require("../controllers/Ad");
-const Address = require("../models/Address");
-const Ads = require("../models/Ad");
+const appController = require("../controllers/App");
+
 const { checkNotLogged } = require("../middleware/checkAuth");
 
-router.get("/update", checkNotLogged, async (req, res) => {
-  const user = await User.findOne({ where: { email: req.session.email }, include: [{ model: Address, required: true }] });
-  const addresses = await Address.findAll();
-  if (req.session.message) {
-    const message = req.session.message;
-    req.session.message = null;
-    return res.render("me_update.ejs", { userinfo: user.dataValues, address: addresses, message: message });
-  }
-  res.render("me_update.ejs", { userinfo: user.dataValues, address: addresses });
-});
+const upload = require("../modules/multer");
 
-router.get("/my_ads", checkNotLogged, async (req, res) => {
-  const ads = await Ads.findAll({
-    include: [
-      { model: User, required: true, where: { email: req.session.email } },
-      { model: Address, required: true },
-    ],
-  });
-  if (req.session.message) {
-    const message = req.session.message;
-    req.session.message = null;
-    return res.render("my_ads.ejs", { userinfo: user.dataValues, message: message });
-  }
-  res.render("my_ads.ejs", { ads: ads });
-});
+router.get("/update", checkNotLogged, appController.renderMeUpdate);
+router.get("/my_ads", checkNotLogged, appController.renderMyAds);
+router.get("/logoff", checkNotLogged, appController.redirectLogoff);
+router.get("/my_ads/update", checkNotLogged, appController.renderEditAd);
 
-router.get("/logoff", checkNotLogged, (req, res) => {
-  req.session = null;
-  res.redirect("/");
-});
+router.put("/update/update", checkNotLogged, userController.updateUser);
+router.put("/my_ads/update/update", checkNotLogged, upload.single("image"), adController.updateAd);
 
-router.put("/update/update", userController.updateUser);
-router.delete("/update/delete", userController.deleteUser);
-
-router.delete("/my_ads/delete", adController.deleteAd);
+router.delete("/update/delete", checkNotLogged, userController.deleteUser);
+router.delete("/my_ads/delete", checkNotLogged, adController.deleteAd);
 
 module.exports = router;

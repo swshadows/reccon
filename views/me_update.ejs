@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/me_update.css">
     <!--Bootstrap icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <%- include('./components/favicon.ejs') %>
+    <%- include('./meta/favicon.ejs') %>
     <title>Opções de Usuario</title>
 </head>
 <body class="primary-bg-color">
@@ -34,9 +34,8 @@
           </div>
         </div>
       </nav>
-      <% if (locals.message) { %>
-        <div class="alert alert-<%=message.class %>" role="alert"><%=message.text; %></div>
-      <% } %>
+      <%- include('./components/message.ejs') %>
+
 
       <!--Formulario de Cadastro-->
       <div class="container mb-5">

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/my_ads.css" />
     <!--Bootstrap icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
-    <%- include('./components/favicon.ejs') %>
+    <%- include('./meta/favicon.ejs') %>
     <title>Anuncios</title>
   </head>
   <body class="primary-bg-color">
@@ -27,6 +27,7 @@
         </div>
       </div>
     </nav>
+    <%- include('./components/message.ejs') %>
 
     <!--botoes bairros-->
     <div class="container fff-bg-color py-3 px-3 radius">
@@ -49,7 +50,10 @@
                       <input type="hidden" name="id" value="<%=ads[i].dataValues.id%>" />
                       <button type="submit" id="btn" class="btn btn-primary btn-sm secundary-bg-color"><i class="bi bi-trash"></i> Excluir anuncio</button>
                     </form>
-                    <a href="/me/my_ads/update">Editar</a>
+                    <form action="/me/my_ads/update" method="get">
+                      <input type="hidden" name="id" value="<%=ads[i].dataValues.id%>" />
+                      <button type="submit" id="btn" class="btn btn-primary btn-sm secundary-bg-color"><i class="bi bi-pencil-square"></i> Editar anuncio</button>
+                    </form>
                   </div>
                 </div>
               </div>

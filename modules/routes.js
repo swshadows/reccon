@@ -1,10 +1,10 @@
 const express = require("express");
 
-const indexRoute = require("./index");
-const formsRoute = require("./forms");
-const appRoute = require("./app");
-const meRoute = require("./me");
-const apiRoute = require("./api");
+const indexRoute = require("../routes/index");
+const formsRoute = require("../routes/forms");
+const appRoute = require("../routes/app");
+const meRoute = require("../routes/me");
+const apiRoute = require("../routes/api");
 
 module.exports = function (app) {
   app.use(express.json());

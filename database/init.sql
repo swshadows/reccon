@@ -10,12 +10,26 @@ CREATE TABLE addresses(
 INSERT INTO addresses
 	(name)
 VALUES
-	("Zumbi"),
-	("Nova Cidade"),
-	("Jorge Teixeira"),
+	("Armando Mendes"),
+	("Alvorada"),
 	("Centro"),
-	("Japiim"),
 	("Cidade de Deus"),
-	("Valparaiso"),
+	("Colonia Antonio Aleixo"),
+	("Compensa"),
+	("Coroado"),
+	("Educandos"),
 	("Flores"),
-	("Colonia Antonio Aleixo");
+	("Japiim"),
+	("Jorge Teixeira"),
+	("Lago Azul"),
+	("Nova Cidade"),
+	("Novo Aleixo"),
+	("Novo Israel"),
+	("Planalto"),
+	("Ponta Negra"),
+	("São Jorge"),
+	("Santa Etelvina"),
+	("Santa Luzia"),
+	("São Francisco"),
+	("Valparaiso"),
+	("Zumbi");

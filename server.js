@@ -5,14 +5,14 @@ const methodOverride = require("method-override");
 const app = express();
 app.use(methodOverride("_method"));
 
-const session = require("./auth/session")(app);
-const routes = require("./routes/routes")(app);
-const db = require("./database/db");
+require("./modules/session")(app);
+require("./modules/routes")(app);
+require("./modules/database");
 
 app.set("template engine", "ejs");
-app.set("views", __dirname + "/views");
+app.set("views", __dirname + "views");
 app.use(express.static(__dirname + "/public"));
-app.use("/i", express.static(__dirname + "/database/img"));
+app.use("/img", express.static(__dirname + "/database/img"));
 
 const port = process.env.SERVER_PORT || 3000;
 app.listen(port, (req, res) => {
