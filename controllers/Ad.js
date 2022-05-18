@@ -25,20 +25,20 @@ module.exports = {
   },
 
   async postAd(req, res) {
+    let imgString;
     const acceptedFormats = [".png", ".webp", ".jpeg", ".jpg"];
 
-    for (i in acceptedFormats) {
-      if (path.extname(req.file.originalname) == acceptedFormats[i]) break;
+    if (req.file) {
+      imgString = "/i/" + req.file.filename;
+      for (i in acceptedFormats) {
+        if (path.extname(req.file.originalname) == acceptedFormats[i]) break;
 
-      if (i >= acceptedFormats.length - 1) {
-        req.session.message = { class: "danger", text: "ERRO: O formato do arquivo enviado é inválido, somente aceitamos os formatos .png, .jpeg, .jpg e .webp" };
-        return res.redirect("/app/create_ad");
+        if (i >= acceptedFormats.length - 1) {
+          req.session.message = { class: "danger", text: "ERRO: O formato do arquivo enviado é inválido, somente aceitamos os formatos .png, .jpeg, .jpg e .webp" };
+          return res.redirect("/app/create_ad");
+        }
       }
-    }
-
-    let imgString;
-    if (req.file) imgString = "/i/" + req.file.filename;
-    else imgString = "/assets/Image-not-found.png";
+    } else imgString = "/assets/Image-not-found.png";
 
     const currentUser = await User.findOne({ where: { email: req.session.email } });
 
@@ -51,6 +51,14 @@ module.exports = {
     });
 
     req.session.message = { class: "success", text: "Anuncio postado com sucesso!" };
+    res.redirect("/app");
+  },
+
+  async deleteAd(req, res) {
+    const ad = await Ad.findOne({ where: { id: req.body.id } });
+    await ad.destroy();
+
+    req.session.message = { class: "success", text: "Anuncio apagado com sucesso" };
     res.redirect("/app");
   },
 };
