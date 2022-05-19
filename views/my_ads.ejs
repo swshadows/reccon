@@ -15,7 +15,7 @@
   </head>
   <body class="primary-bg-color">
     <!--NavBar do projeto RECCON-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 px-1 greem-bg-color fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 px-1 greem-bg-color">
       <div class="container img-left">
         <div class="images"><%- include('./components/brand.ejs') %></div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
     <%- include('./components/message.ejs') %>
 
     <!--botoes bairros-->
-    <div class="container fff-bg-color py-3 px-3 radius">
+    <div class="mt-5 container fff-bg-color py-3 px-3 radius">
       <div class="row overflow">
         <!--cards de anuncios-->
         <div class="col-md-12">
@@ -46,10 +46,7 @@
                   <h6 class="card-subtitle mb-2 text-muted">Coleta em: <%=ads[i].dataValues.address.dataValues.name%></h6>
                   <p class="card-text"><%= ads[i].dataValues.description %></p>
                   <div class="editar d-flex justify-content-between">
-                    <form action="/me/my_ads/delete?_method=delete" method="post">
-                      <input type="hidden" name="id" value="<%=ads[i].dataValues.id%>" />
-                      <button type="submit" id="btn" class="btn btn-primary btn-sm secundary-bg-color"><i class="bi bi-trash"></i> Excluir anuncio</button>
-                    </form>
+                    <button type="submit" data-sqlid="<%=ads[i].dataValues.id%>" class="btn-del btn btn-primary btn-sm secundary-bg-color" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-trash"></i> Excluir anuncio</button>
                     <form action="/me/my_ads/update" method="get">
                       <input type="hidden" name="id" value="<%=ads[i].dataValues.id%>" />
                       <button type="submit" id="btn" class="btn btn-primary btn-sm secundary-bg-color"><i class="bi bi-pencil-square"></i> Editar anuncio</button>
@@ -67,10 +64,30 @@
       </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">AVISO</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Deseja mesmo excluir esse anúncio?</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <form id="form_del" action="/me/my_ads/delete?_method=delete" method="post">
+              <input type="submit" class="btn btn-primary secundary-bg-color" name="delete" value="Excluir" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--Footer do projeto-->
     <%- include('./components/footer.ejs') %>
 
     <!--Bootstrap Javascript-->
+    <script src="/js/modalForm.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
