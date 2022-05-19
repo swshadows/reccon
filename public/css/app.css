@@ -94,8 +94,12 @@
 }
 
 .overflow{
-    height: 400px;
+    height: 460px;
     overflow-x: auto;
+}
+
+.conteudo{
+     height: 500px;
 }
 
 ::-webkit-scrollbar{
@@ -111,16 +115,4 @@
     background-color: #5b3690;
     border-radius: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
