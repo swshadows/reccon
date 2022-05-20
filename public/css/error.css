@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+
+* {
+    font-family: 'Jockey One', sans-serif;
+}
+
+
+/*paleta de cores do projeto*/
+.primary-bg-color{
+    background-color: #f5ffee !important;
+}
+
+.secundary-bg-color{
+    background-color: #5b3690 !important;
+}
+
+.greem-bg-color{
+    background-color: #1fec8c !important;
+}
+
+.last-bg-color{
+    background-color: #e28413 !important;
+}
+/*paleta de cores do projeto*/
+
+
+/*Classe padrao para sombra*/
+.radius{
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+}
+
+/*estilizando os icones do carousel*/
+
+
+.error{
+    margin-top: 100px;
+    height: 500px;
+}
+
+.text{
+    width: 80%;
+}
+
+.text h3{
+    color: #5b3690;
+}
+
+.img img{
+    width: 100%;
+}
+
+
+
+
+
+
