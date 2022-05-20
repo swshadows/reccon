@@ -77,7 +77,7 @@
                   <h6 class="card-subtitle mb-2 text-muted">Coleta em: <%=ads[i].dataValues.address.dataValues.name%></h6>
                   <p class="card-text"><%=ads[i].dataValues.description %></p>
                   <div class="contato">
-                    <a href="https://api.whatsapp.com/send?phone=<%=ads[i].dataValues.user.dataValues.phone %>&text=Olá! Estou%20interessado%20na%20sua%20doação%E2%80%9D" target="_blank"
+                    <a href="https://api.whatsapp.com/send?phone=+55<%=ads[i].dataValues.user.dataValues.phone %>&text=Olá! Estou%20interessado%20na%20sua%20doação" target="_blank"
                       ><button type="button" id="btn" class="btn btn-primary btn-sm secundary-bg-color"><i class="bi bi-whatsapp"></i>Contatar doador</button>
                     </a>
                   </div>

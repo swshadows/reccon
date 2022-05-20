@@ -47,17 +47,17 @@
                     <div class="form-group py-4 px-4">
                         <!--input do nome-->
                         <div class="name d-flex gap-2">
-                            <input type="text" name="name" id="name" placeholder="Digite novo nome" required></input>
+                            <input type="text" name="name" id="name" placeholder="Digite novo nome" pattern="{1,50}" title="Maximo de 50 caracteres" required></input>
                             <label for="text">Nome atual: <%= userinfo.name %> </label>
                         </div>
                         <!--input do email-->
                         <div class="email-user d-flex gap-2">
-                            <input type="email" name="email" id="email" placeholder="Digite novo e-mail" required>
+                            <input type="email" name="email" id="email" placeholder="Digite novo e-mail" pattern="{1,50}" title="Maximo de 50 caracteres" required>
                             <label for="email"> Email atual: <%= userinfo.email %></label>
                         </div>
                         <!--input do telefone-->
                         <div class="email-user d-flex gap-2">
-                          <input type="tel" name="phone" id="phone" placeholder="Digite novo telefone" required>
+                          <input type="tel" name="phone" id="phone" placeholder="Digite novo telefone" title="Exatos 11 números (DDD + Número)" pattern="[0-9]{11}" required>
                           <label for="phone"> Telefone atual: <%= userinfo.phone %></label>
                       </div>
                         <!--alterar bairros-->
@@ -72,9 +72,9 @@
                         </div>
                         <!--input das senhas-->
                         <div class="senha d-md-flex gap-3">
-                            <input type="password" name="password" id="password" placeholder="Digite sua senha atual" required>
-                            <input type="password" name="new_password" id="new_password" placeholder="Digite a nova senha" required>
-                            <input type="Password" name="new_password_confirm" id="new_password_confirm" placeholder="Confirme sua senha" required>
+                            <input type="password" name="password" id="password" placeholder="Digite sua senha atual" title="8 caracteres ou mais" pattern=".{8,}" required>
+                            <input type="password" name="new_password" id="new_password" placeholder="Digite a nova senha" title="8 caracteres ou mais" pattern=".{8,}" required>
+                            <input type="Password" name="new_password_confirm" id="new_password_confirm" placeholder="Confirme sua senha" title="8 caracteres ou mais" pattern=".{8,}" required>
                                 <div class="eye-pass">
                                     <input id="btn" class="btn btn-primary btn-sm secundary-bg-color" type="checkbox">
                                     <label for="mostrarSenha"> Mostrar Senha</label>
