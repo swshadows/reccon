@@ -77,6 +77,16 @@ module.exports = {
     setHeaders(res);
     res.render("forms.ejs", { address: addresses, message });
   },
+
+  // static.routes
+  async renderStaticTechs(req, res) {
+    res.render("./static/techs.ejs");
+  },
+
+  // error.routes
+  async renderError(req, res) {
+    res.status(404).render("error.ejs");
+  },
 };
 
 function setMessage(req) {

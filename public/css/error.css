@@ -36,9 +36,13 @@
 
 
 .error{
-    margin-top: 100px;
+    margin-top: 80px;
     height: 500px;
 }
+
+.images img{
+    width: 80px;
+  }
 
 .text{
     width: 80%;
@@ -52,8 +56,21 @@
     width: 100%;
 }
 
+.links{
+    width: 100px;
+    font-size: 2rem;
+}
 
+.links i , .links a{
+    color: #f7f7f7;
+    text-decoration: none;
+}
 
+.links i:hover , .links a:hover{
+    color: #5b3690;
+}
 
-
-
+.copy{
+    width: 30%;
+    height: 100%;
+}

@@ -50,12 +50,13 @@
                     <% } %>
                   </select>
 
-                  <div class="fotos">
-                    <label for="image">
-                      <a class="navbar-brand" href="#"><img src="/assets/icon.svg" alt="" /></a>
-                      <a class="navbar-brand" href="#"><img src="/assets/text.svg" alt="" /></a>
-                      <input type="file" name="image" accept=".jpg,.png,.jpeg,.webp, image/webp, image/jpeg, image/png" />
-                    </label>
+                  <div class="w-100 text-end fotos">
+                    <button class="btn" onclick="document.getElementById('file').click();">
+                      <img src="/assets/icon.svg" />
+                      <img src="/assets/text.svg" />
+                    </button>
+                    <p style="position: relative" id="file-warning">Nenhum arquivo selecionado</p>
+                    <input style="display: none" type="file" id="file" name="file" accept=".jpg,.png,.jpeg,.webp, image/webp, image/jpeg, image/png" />
                   </div>
                 </div>
                 <div class="btn-enviar align-self-start">
@@ -72,6 +73,7 @@
     <%- include('./components/footer.ejs') %>
 
     <!--Bootstrap Javascript-->
+    <script src="/js/checkFiles.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

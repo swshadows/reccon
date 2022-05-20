@@ -14,6 +14,11 @@ app.set("views", __dirname + "/views");
 app.use(express.static(__dirname + "/public"));
 app.use("/img", express.static(__dirname + "/database/img"));
 
+// 404
+app.use(function (req, res, next) {
+  res.status(404).render("error.ejs");
+});
+
 const port = process.env.SERVER_PORT || 3000;
 app.listen(port, (req, res) => {
   console.log(`Servidor iniciado em http://localhost:${port}`);
