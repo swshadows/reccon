@@ -46,7 +46,7 @@
                     <form method="POST" action="/forms/register" class="d-flex justify-content-center formulario radius">
                     <div class="form-group py-4 px-4">
                       <!--input do formulario-->
-                        <input type="text" name="name" id="name" placeholder="Digite seu Nome Completo" pattern="{1,50}" title="Maximo de 50 caracteres" required></input>
+                        <input type="text" name="name" id="name" placeholder="Digite seu Nome Completo" pattern="[A-Za-z]{1,50}" title="Maximo de 50 caracteres, somente letras" required></input>
                         <input type="email" name="email" id="email" placeholder="Digite seu Email" pattern="{1,50}" title="Máximo de 50 caracteres" required>
                         <input type="password" name="password" id="password" placeholder="Digite sua Senha (Maior que 8 digitos)" title="8 caracteres ou mais" pattern=".{8,}" required>
                         <input type="Password" name="password_confirm" id="password_confirm" placeholder="Confirme sua Senha" title="8 caracteres ou mais" pattern=".{8,}" required>
