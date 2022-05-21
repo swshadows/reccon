@@ -2,6 +2,7 @@
 .env
 node_modules
 database/img/*.*
+*.sh
 
 # Not ignored
 !database/img/.gitkeep

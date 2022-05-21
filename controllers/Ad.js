@@ -27,6 +27,23 @@ module.exports = {
   },
 
   async postAd(req, res) {
+    const findAddress = await Address.findOne({ where: { id: req.body.id } });
+
+    if (!req.body.title || req.body.title > 50) {
+      req.session.message = { class: "danger", text: "ERRO: O titulo do anuncio está vazio ou passa de 50 caracteres" };
+      return res.redirect("/app/create_ad");
+    }
+
+    if (!req.body.description || req.body.description > 200) {
+      req.session.message = { class: "danger", text: "ERRO: A descrição do anuncio está vazia ou passa de 200 caracteres" };
+      return res.redirect("/app/create_ad");
+    }
+
+    if (!req.body.address || !findAddress) {
+      req.session.message = { class: "danger", text: "ERRO: Endereço vazio ou não encontrado, escolha um endereço" };
+      return res.redirect("/app/create_ad");
+    }
+
     const currentUser = await User.findOne({ where: { email: req.session.email } });
     let imageFormat = checkImageFormat(req);
     if (!imageFormat) {
@@ -47,6 +64,22 @@ module.exports = {
   async updateAd(req, res) {
     const prevAd = await Ad.findOne({ where: { id: req.body.id } });
     const currentUser = await User.findOne({ where: { email: req.session.email } });
+    const findAddress = await Address.findOne({ where: { id: req.body.id } });
+
+    if (!req.body.title || req.body.title > 50) {
+      req.session.message = { class: "danger", text: "ERRO: O titulo do anuncio está vazio ou passa de 50 caracteres" };
+      return res.redirect("/app/create_ad");
+    }
+
+    if (!req.body.description || req.body.description > 200) {
+      req.session.message = { class: "danger", text: "ERRO: A descrição do anuncio está vazia ou passa de 200 caracteres" };
+      return res.redirect("/app/create_ad");
+    }
+
+    if (!req.body.address || !findAddress) {
+      req.session.message = { class: "danger", text: "ERRO: Endereço vazio ou não encontrado, escolha um endereço" };
+      return res.redirect("/app/create_ad");
+    }
 
     let imageFormat = checkImageFormat(req);
     if (!imageFormat) {

@@ -67,7 +67,7 @@
                       </div>
                         <!--alterar bairros-->
                         <div class="d-flex gap-2">
-                          <select name="adress" id="adress" required>
+                          <select name="address" id="address" required>
                               <option value="" disabled selected="selected">Alterar Seu Bairro</option>
                               <% for(let i = 0; i < address.length; i++) { %>
                                 <option value=<%=address[i].dataValues.id%>><%= address[i].dataValues.name %></option>
@@ -86,7 +86,7 @@
                                 </div>
                         </div>
                         <div class="d-flex justify-content-between botoes">
-                          <input type="submit" name="update" id="btn" class="btn btn-primary btn-sm secundary-bg-color" value="Salvar alterações">
+                          <input type="submit" id="btn" class="btn btn-primary btn-sm secundary-bg-color" value="Salvar alterações">
                           <!-- Button trigger modal -->
                           <button type="button" class="btn btn-primary btn-sm secundary-bg-color" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Excluir Conta

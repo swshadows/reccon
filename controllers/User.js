@@ -9,6 +9,32 @@ module.exports = {
   },
 
   async registerUser(req, res) {
+    const findAddress = await Address.findOne({ where: { id: req.body.id } });
+
+    if (!req.body.name || req.body.name.length > 50) {
+      req.session.message = { class: "danger", text: "ERRO: Nome inválido ou vazio, seu nome deve ser menor que 50 caracteres" };
+      return res.redirect("/forms");
+    }
+    if (!req.body.email || req.body.email.length > 50) {
+      req.session.message = { class: "danger", text: "ERRO: Email inválido ou vazio, seu nome deve ser menor que 50 caracteres" };
+      return res.redirect("/forms");
+    }
+
+    if (!req.body.password || !req.body.password_confirm || req.body.password.length < 8 || req.body.password_confirm.length < 8) {
+      req.session.message = { class: "danger", text: "ERRO: Senhas inválidas ou vazias, sua senha deve ser maior que 8 caracteres" };
+      return res.redirect("/forms");
+    }
+
+    if (!req.body.phone || req.body.phone.length != 11) {
+      req.session.message = { class: "danger", text: "ERRO: Telefone inválido ou vazio, seu telefone deve ter exatamente 11 caracteres (DDD + Número)" };
+      return res.redirect("/forms");
+    }
+
+    if (!req.body.address || !findAddress) {
+      req.session.message = { class: "danger", text: "ERRO: Endereço vazio ou não encontrado, escolha um endereço" };
+      return res.redirect("/forms");
+    }
+
     if (req.body.password != req.body.password_confirm) {
       req.session.message = { class: "danger", text: "ERRO: As senhas não são iguais" };
       return res.redirect("/forms");
@@ -50,6 +76,31 @@ module.exports = {
   },
 
   async updateUser(req, res) {
+    const findAddress = await Address.findOne({ where: { id: req.body.id } });
+
+    if (!req.body.name || req.body.name.length > 50) {
+      req.session.message = { class: "danger", text: "ERRO: Nome inválido ou vazio, seu nome deve ser menor que 50 caracteres" };
+      return res.redirect("/me/update");
+    }
+    if (!req.body.email || req.body.email.length > 50) {
+      req.session.message = { class: "danger", text: "ERRO: Email inválido ou vazio, seu nome deve ser menor que 50 caracteres" };
+      return res.redirect("/me/update");
+    }
+
+    if (!req.body.password || !req.body.new_password || !req.body.new_password_confirm || req.body.password.length < 8 || req.body.new_password.length < 8 || req.body.new_password_confirm.length < 8) {
+      req.session.message = { class: "danger", text: "ERRO: Senhas inválidas ou vazias, sua senha deve ser maior que 8 caracteres" };
+      return res.redirect("/me/update");
+    }
+
+    if (!req.body.phone || req.body.phone.length != 11) {
+      req.session.message = { class: "danger", text: "ERRO: Telefone inválido ou vazio, seu telefone deve ter exatamente 11 caracteres (DDD + Número)" };
+      return res.redirect("/me/update");
+    }
+
+    if (!req.body.address || !findAddress) {
+      req.session.message = { class: "danger", text: "ERRO: Endereço vazio ou não encontrado, escolha um endereço" };
+      return res.redirect("/me/update");
+    }
     const findUser = await User.findOne({ where: { email: req.session.email } });
     if (!(await bcrypt.compare(req.body.password, findUser.password))) {
       req.session.message = { class: "danger", text: "ERRO: Credenciais incorretas" };
