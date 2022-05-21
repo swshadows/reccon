@@ -1,139 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Bootstrap css-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-    crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <!--css do projeto-->
-    <link rel="stylesheet" href="/css/me_update.css">
+    <link rel="stylesheet" href="/css/me_update.css" />
     <!--Bootstrap icons-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
     <%- include('./meta/favicon.ejs') %>
     <title>Opções de Usuario</title>
-</head>
-<body class="primary-bg-color">
-
+  </head>
+  <body class="primary-bg-color">
     <!--NavBar do projeto RECCON-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 px-1 greem-bg-color">
-        <div class="container h-navbar">
-          <div class="images d-flex justify-content-center align-items-center">
-            <a class="navbar-brand" href="/"><img src="/assets/app_icon.png" alt="" /></a>
-            <div class="image-mobile">
-              <a class="navbar-brand" href="/"><img src="/assets/app_name.png" alt="" /></a>
-            </div>
-          </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <%- include('./components/dropdown-account.ejs') %>
-            <form class="d-flex">
-              <%- include('./components/btn-returnapp.ejs') %>
-            </form>
+      <div class="container h-navbar">
+        <div class="images d-flex justify-content-center align-items-center">
+          <a class="navbar-brand" href="/"><img src="/assets/app_icon.png" alt="" /></a>
+          <div class="image-mobile">
+            <a class="navbar-brand" href="/"><img src="/assets/app_name.png" alt="" /></a>
           </div>
         </div>
-      </nav>
+        <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <%- include('./components/dropdown-account.ejs') %>
+          <form class="d-flex"><%- include('./components/btn-returnapp.ejs') %></form>
+        </div>
+      </div>
+    </nav>
 
-      <%- include('./components/modal-account-app.ejs') %>
-      <%- include('./components/message.ejs') %>
+    <%- include('./components/modal-account-app.ejs') %> <%- include('./components/message.ejs') %>
 
-
-      <!--Formulario de Cadastro-->
-      <div style="margin-bottom: 200px;" class="container mb-5">
-          <div class="row">
-              <div class="col-md-12">
-                <div class="fff-bg-color">
-                    <form action="/me/update/update?_method=put" class="formulario text-center radius" method="post">
-                        <h2>Bem-vindo, <%=userinfo.name %></h2>
-                    <div class="form-group py-4 px-4">
-                        <!--input do nome-->
-                        <div class="name d-flex gap-2">
-                            <input type="text" name="name" id="name" placeholder="Digite novo nome" pattern="[A-Z| |a-z]{1,50}" title="Maximo de 50 caracteres, somente letras" required>
-                            <label for="text">Nome atual: <%= userinfo.name %> </label>
-                        </div>
-                        <!--input do email-->
-                        <div class="email-user d-flex gap-2">
-                            <input type="email" name="email" id="email" placeholder="Digite novo e-mail" pattern="{1,50}" title="Maximo de 50 caracteres" required>
-                            <label for="email"> Email atual: <%= userinfo.email %></label>
-                        </div>
-                        <!--input do telefone-->
-                        <div class="email-user d-flex gap-2">
-                          <input type="tel" name="phone" id="phone" placeholder="Digite novo telefone" title="Exatos 11 números (DDD + Número)" pattern="[0-9]{11}" required>
-                          <label for="phone"> Telefone atual: <%= userinfo.phone %></label>
-                      </div>
-                        <!--alterar bairros-->
-                        <div class="d-flex gap-2">
-                          <select name="address" id="address" required>
-                              <option value="" disabled selected="selected">Alterar Seu Bairro</option>
-                              <% for(let i = 0; i < address.length; i++) { %>
-                                <option value=<%=address[i].dataValues.id%>><%= address[i].dataValues.name %></option>
-                              <% } %>
-                          </select>
-                          <label for="address">Bairro atual: <%= userinfo.address.dataValues.name%></label>
-                        </div>
-                        <!--input das senhas-->
-                        <div class="senha d-md-flex gap-3">
-                            <input type="password" name="password" id="password" placeholder="Digite sua senha atual" title="8 caracteres ou mais" pattern=".{8,}" required>
-                            <input type="password" name="new_password" id="new_password" placeholder="Digite a nova senha" title="8 caracteres ou mais" pattern=".{8,}" required>
-                            <input type="Password" name="new_password_confirm" id="new_password_confirm" placeholder="Confirme sua senha" title="8 caracteres ou mais" pattern=".{8,}" required>
-                                <div class="eye-pass">
-                                    <input id="btn" class="btn btn-primary btn-sm secundary-bg-color" type="checkbox">
-                                    <label for="mostrarSenha"> Mostrar Senha</label>
-                                </div>
-                        </div>
-                        <div class="d-flex justify-content-between botoes">
-                          <input type="submit" id="btn" class="btn btn-primary btn-sm secundary-bg-color" value="Salvar alterações">
-                          <!-- Button trigger modal -->
-                          <button type="button" class="btn btn-primary btn-sm secundary-bg-color" data-bs-toggle="modal" data-bs-target="#excludeModal">
-                            Excluir Conta
-                          </button>
-
-
-                        </div>
-                      </form>
-                      <!-- Modal -->
-                      <div class="modal fade" id="excludeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Ola <%= userinfo.name %></h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                              Deseja mesmo excluir sua conta? Todos os seus dados e anuncios
-                              seram excluidos permanentemente
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                              <form action="/me/update/delete?_method=delete" method="post">
-                                <input type="submit" class="btn btn-primary secundary-bg-color" name="delete" value="Excluir">
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+    <!--Formulario de Cadastro-->
+    <div style="margin-bottom: 200px" class="container mb-5">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="fff-bg-color">
+            <h2>Bem-vindo, <%=userinfo.name %></h2>
+            <div class="form-group py-4 px-4">
+              <!--input do nome-->
+              <form action="/me/update/name?_method=put" method="post">
+                <div class="name d-flex gap-2">
+                  <input type="text" name="name" id="name" placeholder="Digite novo nome" pattern="[A-Z| |a-z]{1,50}" title="Maximo de 50 caracteres, somente letras" required />
+                  <label for="text">Nome atual: <%= userinfo.name %> </label>
+                </div>
+                <input type="submit" id="btn" class="mt-2 btn btn-primary btn-sm secundary-bg-color" value="Salvar novo nome" />
+              </form>
+              <!--input do email-->
+              <form action="/me/update/email?_method=put" method="post">
+                <div class="email-user d-flex gap-2">
+                  <input type="email" name="email" id="email" placeholder="Digite novo e-mail" pattern="{1,50}" title="Maximo de 50 caracteres" required />
+                  <label for="email"> Email atual: <%= userinfo.email %></label>
+                </div>
+                <input type="submit" id="btn" class="mt-2 btn btn-primary btn-sm secundary-bg-color" value="Salvar novo email" />
+              </form>
+              <!--input do telefone-->
+              <form action="/me/update/phone?_method=put" method="post">
+                <div class="email-user d-flex gap-2">
+                  <input type="tel" name="phone" id="phone" placeholder="Digite novo telefone" title="Exatos 11 números (DDD + Número)" pattern="[0-9]{11}" required />
+                  <label for="phone"> Telefone atual: <%= userinfo.phone %></label>
+                </div>
+                <input type="submit" id="btn" class="mt-2 btn btn-primary btn-sm secundary-bg-color" value="Salvar novo telefone" />
+              </form>
+              <!--alterar bairros-->
+              <form action="/me/update/address?_method=put" method="post">
+                <div class="d-flex gap-2">
+                  <select name="address" id="address" required>
+                    <option value="" disabled selected="selected">Alterar Seu Bairro</option>
+                    <% for(let i = 0; i < address.length; i++) { %>
+                    <option value="<%=address[i].dataValues.id%>"><%= address[i].dataValues.name %></option>
+                    <% } %>
+                  </select>
+                  <label for="address">Bairro atual: <%= userinfo.address.dataValues.name%></label>
+                </div>
+                <input type="submit" id="btn" class="mt-2 btn btn-primary btn-sm secundary-bg-color" value="Salvar novo endereço" />
+              </form>
+              <!--input das senhas-->
+              <div class="senha d-md-flex gap-3">
+                <form action="/me/update/password?_method=put" method="post">
+                  <input type="password" name="password" id="password" placeholder="Digite sua senha atual" title="8 caracteres ou mais" pattern=".{8,}" required />
+                  <input type="password" name="new_password" id="new_password" placeholder="Digite a nova senha" title="8 caracteres ou mais" pattern=".{8,}" required />
+                  <input type="Password" name="new_password_confirm" id="new_password_confirm" placeholder="Confirme sua senha" title="8 caracteres ou mais" pattern=".{8,}" required />
+                  <div class="eye-pass">
+                    <input id="showPass" class="btn btn-primary btn-sm secundary-bg-color" type="checkbox" />
+                    <label for="mostrarSenha"> Mostrar Senha</label>
+                  </div>
+                  <input type="submit" id="btn" class="mt-2 btn btn-primary btn-sm secundary-bg-color" value="Salvar nova senha" />
+                </form>
+              </div>
+              <div class="d-flex justify-content-between botoes">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#excludeModal">Excluir Conta</button>
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="excludeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Ola <%= userinfo.name %></h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+                    <div class="modal-body">Deseja mesmo excluir sua conta? Todos os seus dados e anuncios seram excluidos permanentemente</div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <form action="/me/update/delete?_method=delete" method="post">
+                        <input type="submit" class="btn btn-primary secundary-bg-color" name="delete" value="Excluir" />
+                      </form>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
           </div>
+        </div>
       </div>
+    </div>
 
+    <!--Footer do projeto-->
+    <%- include('./components/footer.ejs') %>
 
-
-      <!--Footer do projeto-->
-      <%- include('./components/footer.ejs') %>
-
-
-
-      <!--script do mostrar senha-->
-      <script src="/js/mostrarSenha.js"></script>
+    <!--script do mostrar senha-->
+    <script src="/js/mostrarSenha.js"></script>
     <!--Bootstrap Javascript-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
 </html>

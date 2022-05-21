@@ -126,7 +126,12 @@ function checkImageFormat(req) {
     for (i in acceptedFormats) {
       if (path.extname(req.file.originalname) == acceptedFormats[i]) break;
 
-      if (i >= acceptedFormats.length - 1) return (imgString = null);
+      if (i >= acceptedFormats.length - 1) {
+        fs.unlink(`database${imgString}`, (err) => {
+          if (err) throw err;
+        });
+        return (imgString = null);
+      }
     }
   } else imgString = "/assets/Image-not-found.png";
   return imgString;

@@ -56,12 +56,12 @@
                   </select>
 
                   <div class="w-100 text-end fotos">
-                    <button class="btn" onclick="document.getElementById('file').click();">
+                    <button class="btn" value="loadXML" onclick="event.preventDefault(); document.getElementById('file').click()">
                       <img src="/assets/icon.svg" />
                       <img src="/assets/text.svg" />
                     </button>
                     <p style="position: relative" id="file-warning">Nenhum arquivo selecionado</p>
-                    <input style="display: none" type="file" id="file" name="file" accept=".jpg,.png,.jpeg,.webp, image/webp, image/jpeg, image/png" />
+                    <input style="display: none" type="file" id="file" name="file" accept=".jpg,.png,.jpeg,.webp" />
                   </div>
                 </div>
                 <div class="btn-enviar align-self-start">

@@ -76,32 +76,86 @@ module.exports = {
     res.redirect("/");
   },
 
-  async updateUser(req, res) {
-    const findAddress = await Address.findOne({ where: { id: req.body.address } });
-
+  async updateUserName(req, res) {
+    const user = await User.findOne({ where: { email: req.session.email } });
     if (!req.body.name || req.body.name.length > 50) {
       req.session.message = { class: "danger", text: "ERRO: Nome inválido ou vazio, seu nome deve ser menor que 50 caracteres" };
       return res.redirect("/me/update");
     }
+
+    user.name = req.body.name;
+    await user.save();
+
+    req.session.message = { class: "success", text: "Nome atualizado com sucesso" };
+    res.redirect("/me/update");
+  },
+
+  async updateUserEmail(req, res) {
+    const user = await User.findOne({ where: { email: req.session.email } });
     if (!req.body.email || req.body.email.length > 50) {
-      req.session.message = { class: "danger", text: "ERRO: Email inválido ou vazio, seu nome deve ser menor que 50 caracteres" };
+      req.session.message = { class: "danger", text: "ERRO: Email inválido ou vazio, seu email deve ser menor que 50 caracteres" };
       return res.redirect("/me/update");
     }
+
+    const checkConflict = await User.findOne({ where: { email: req.body.email } });
+    if (checkConflict && user.email != checkConflict.email) {
+      req.session.message = { class: "danger", text: "ERRO: Este email já está em uso" };
+      return res.redirect("/me/update");
+    }
+
+    user.email = req.body.email;
+    await user.save();
+
+    req.session.email = user.email;
+
+    req.session.message = { class: "success", text: "Email atualizado com sucesso" };
+    res.redirect("/me/update");
+  },
+
+  async updateUserPhone(req, res) {
+    const user = await User.findOne({ where: { email: req.session.email } });
+    if (!req.body.phone || req.body.phone.length != 11) {
+      req.session.message = { class: "danger", text: "ERRO: Telefone inválido ou vazio, seu telefone deve ter exatamente 11 caracteres (DDD + Número)" };
+      return res.redirect("/me/update");
+    }
+
+    const checkConflict = await User.findOne({ where: { phone: req.body.phone } });
+    if (checkConflict && user.phone != checkConflict.phone) {
+      req.session.message = { class: "danger", text: "ERRO: Este telefone já está em uso" };
+      return res.redirect("/me/update");
+    }
+
+    user.phone = req.body.phone;
+    await user.save();
+
+    req.session.message = { class: "success", text: "Telefone atualizado com sucesso" };
+    res.redirect("/me/update");
+  },
+
+  async updateUserAddress(req, res) {
+    const findAddress = await Address.findOne({ where: { id: req.body.address } });
+    const user = await User.findOne({ where: { email: req.session.email } });
+
+    if (!req.body.address || !findAddress) {
+      req.session.message = { class: "danger", text: "ERRO: Endereço vazio ou não encontrado, escolha um endereço" };
+      return res.redirect("/me/update");
+    }
+
+    user.fk_address = req.body.address;
+    await user.save();
+
+    req.session.message = { class: "success", text: "Endereço atualizado com sucesso" };
+    res.redirect("/me/update");
+  },
+
+  async updateUserPassword(req, res) {
+    const user = await User.findOne({ where: { email: req.session.email } });
 
     if (!req.body.password || !req.body.new_password || !req.body.new_password_confirm || req.body.password.length < 8 || req.body.new_password.length < 8 || req.body.new_password_confirm.length < 8) {
       req.session.message = { class: "danger", text: "ERRO: Senhas inválidas ou vazias, sua senha deve ser maior que 8 caracteres" };
       return res.redirect("/me/update");
     }
 
-    if (!req.body.phone || req.body.phone.length != 11) {
-      req.session.message = { class: "danger", text: "ERRO: Telefone inválido ou vazio, seu telefone deve ter exatamente 11 caracteres (DDD + Número)" };
-      return res.redirect("/me/update");
-    }
-
-    if (!req.body.address || !findAddress) {
-      req.session.message = { class: "danger", text: "ERRO: Endereço vazio ou não encontrado, escolha um endereço" };
-      return res.redirect("/me/update");
-    }
     const findUser = await User.findOne({ where: { email: req.session.email } });
     if (!(await bcrypt.compare(req.body.password, findUser.password))) {
       req.session.message = { class: "danger", text: "ERRO: Credenciais incorretas" };
@@ -113,29 +167,10 @@ module.exports = {
       return res.redirect("/me/update");
     }
 
-    let checkConflict = await User.findOne({ where: { phone: req.body.phone } });
-    if (checkConflict && findUser.phone != checkConflict.phone) {
-      req.session.message = { class: "danger", text: "ERRO: Este telefone já está em uso" };
-      return res.redirect("/me/update");
-    }
+    user.password = await bcrypt.hash(req.body.new_password, 10);
+    await user.save();
 
-    checkConflict = await User.findOne({ where: { email: req.body.email } });
-    if (checkConflict && findUser.email != checkConflict.email) {
-      req.session.message = { class: "danger", text: "ERRO: Este email já está em uso" };
-      return res.redirect("/me/update");
-    }
-
-    const user = {
-      name: req.body.name,
-      email: req.body.email,
-      phone: req.body.phone,
-      address: req.body.address,
-      password: await bcrypt.hash(req.body.new_password, 10),
-    };
-
-    await User.update(user, { where: { email: req.session.email } });
-    req.session.email = user.email;
-    req.session.message = { class: "success", text: "Informações atualizadas com sucesso" };
+    req.session.message = { class: "success", text: "Senha atualizada com sucesso" };
     res.redirect("/me/update");
   },
 

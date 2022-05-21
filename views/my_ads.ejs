@@ -52,7 +52,7 @@
                   <h6 class="card-subtitle mb-2 text-muted">Coleta em: <%=ads[i].dataValues.address.dataValues.name%></h6>
                   <p class="card-text"><%= ads[i].dataValues.description %></p>
                   <div class="editar d-flex justify-content-between">
-                    <button type="submit" data-sqlid="<%=ads[i].dataValues.id%>" class="btn-del btn btn-primary btn-sm secundary-bg-color" data-bs-toggle="modal" data-bs-target="#exampleModall"><i class="bi bi-trash"></i> Excluir anuncio</button>
+                    <button type="submit" data-sqlid="<%=ads[i].dataValues.id%>" class="btn-del btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModall"><i class="bi bi-trash"></i> Excluir anuncio</button>
                     <form action="/me/my_ads/update" method="post">
                       <input type="hidden" name="id" value="<%=ads[i].dataValues.id%>" />
                       <button type="submit" id="btn" class="btn btn-primary btn-sm secundary-bg-color"><i class="bi bi-pencil-square"></i> Editar anuncio</button>
