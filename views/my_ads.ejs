@@ -33,28 +33,7 @@
       </div>
     </nav>
 
-    
-    <div class="modal modall fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content modal-contentt greem-bg-color">
-          <div class="modal-header">
-            <img style="width: 50px;" src="/assets/app_icon.png" alt="">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <ul class="list-group list-group-flush itms-modal">
-              <li class="list-group-item"><a href="/me/update">Alterar informações</a></li>
-              <li class="list-group-item"><a href="/me/my_ads">Meus anúncios</a></li>
-              <li class="list-group-item"><a href="/me/logoff">Sair</a></li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <%- include('./components/btn-returnapp.ejs') %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <%- include('./components/message.ejs') %>
+    <%- include('./components/modal-account-app.ejs') %> <%- include('./components/message.ejs') %>
 
     <!--botoes bairros-->
     <div class="mt-5 container fff-bg-color py-3 px-3 radius">
@@ -74,7 +53,7 @@
                   <p class="card-text"><%= ads[i].dataValues.description %></p>
                   <div class="editar d-flex justify-content-between">
                     <button type="submit" data-sqlid="<%=ads[i].dataValues.id%>" class="btn-del btn btn-primary btn-sm secundary-bg-color" data-bs-toggle="modal" data-bs-target="#exampleModall"><i class="bi bi-trash"></i> Excluir anuncio</button>
-                    <form action="/me/my_ads/update" method="get">
+                    <form action="/me/my_ads/update" method="post">
                       <input type="hidden" name="id" value="<%=ads[i].dataValues.id%>" />
                       <button type="submit" id="btn" class="btn btn-primary btn-sm secundary-bg-color"><i class="bi bi-pencil-square"></i> Editar anuncio</button>
                     </form>
@@ -84,7 +63,7 @@
             </div>
             <% }} else { %>
             <p>Você não tem nenhum anuncio</p>
-            <% } %> 
+            <% } %>
             <!--Fim do card-->
           </div>
         </div>

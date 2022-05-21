@@ -36,7 +36,7 @@ module.exports = {
   },
 
   async renderEditAd(req, res) {
-    const ad = await Ad.findOne({ where: { id: req.query.id } });
+    const ad = await Ad.findOne({ where: { id: req.body.id } });
     const address = await Address.findAll();
     const message = setMessage(req);
     setHeaders(res);

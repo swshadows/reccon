@@ -45,26 +45,7 @@
       </div>
     </nav>
 
-    <div class="modal modall fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content modal-contentt greem-bg-color">
-          <div class="modal-header">
-            <img style="width: 50px;" src="/assets/app_icon.png" alt="">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <ul class="list-group list-group-flush itms-modal">
-              <li class="list-group-item"><a href="/me/update">Alterar informações</a></li>
-              <li class="list-group-item"><a href="/me/my_ads">Meus anúncios</a></li>
-              <li class="list-group-item"><a href="/me/logoff">Sair</a></li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <a href="/app/create_ad"><button type="button" class="btn btn-primary btn-lg secundary-bg-color">Publicar anúncio</button></a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%- include('./components/modal-account-publish.ejs') %>
     <%- include('./components/message.ejs') %>
 
       <!--botoes bairros-->
@@ -118,28 +99,28 @@
 
 
     <!--Mobile-->
-    <div style="margin-bottom: 50px;" class="container none-mobile mt-2 mb-5">
+    <div class="container none-mobile mt-5">
       <div class="conteudo-mobile fff-bg-color radius">
         <div class="row">
           <div class="col-md-6 d-flex justify-content-center">
-            <select name="address" id="Bairro" required>
+            <select name="address" id="Bairro" onchange="fetchFromAPI(value, 'mobile')" required>
               <option value="" disabled selected="selected"> Selecione Seu Bairro</option>
               <% for(let i = 0; i < address.length; i++) { %>
-                <option value=<%=address[i].dataValues.id%>><%= address[i].dataValues.name %></option>
+                <option class="button-api" value=<%=address[i].dataValues.id%>><%= address[i].dataValues.name %></option>
               <% } %>
           </select>
           </div>
-          <div class="col-md-6 overflow">
+          <div id="bairros-body-mobile" class="col-md-6 overflow">
             <!--nicio do card-->
             <% for(let i=0; i < ads.length; i++) { %>
-            <div class="card-mobile d-flex py-1 px-1">
-              <div class="img">
+            <div class="card-mobile d-flex p-1 my-2">
+              <div class="w-50 img">
                 <img src="<%=ads[i].dataValues.image_path %>" width="280" class="card-img-top" alt="..." />
               </div>
-              <div class="text d-flex flex-column justify-content-between">
+              <div class="w-50 ms-2 text d-flex flex-column">
                 <h5 class="card-title"><%=ads[i].dataValues.title %></h5>
                 <h6 class="card-subtitle mb-2 text-muted">Coleta em: <%=ads[i].dataValues.address.dataValues.name%></h6>
-                <p class="card-text"><%=ads[i].dataValues.description %></p>
+                <p style="word-wrap: break-word;" class="w-100 h-50 card-text"><%=ads[i].dataValues.description %></p>
                 <div class="contato">
                   <a href="https://api.whatsapp.com/send?phone=+55<%=ads[i].dataValues.user.dataValues.phone %>&text=Olá! Estou%20interessado%20na%20sua%20doação" target="_blank"
                     ><button type="button" id="btn" class="btn btn-primary btn-sm secundary-bg-color"><i class="bi bi-whatsapp"></i>Contatar doador</button>

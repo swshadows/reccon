@@ -29,33 +29,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <%- include('./components/dropdown-account.ejs') %>
           <form class="d-flex">
-            <a href="/app"> <%- include('./components/btn-returnmyads.ejs') %> </a>
+            <a href="/app"> <%- include('./components/btn-returnapp.ejs') %> </a>
           </form>
         </div>
       </div>
     </nav>
 
-    <div class="modal modall fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content modal-contentt greem-bg-color">
-          <div class="modal-header">
-            <img style="width: 50px;" src="/assets/app_icon.png" alt="">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <ul class="list-group list-group-flush itms-modal">
-              <li class="list-group-item"><a href="/me/update">Alterar informações</a></li>
-              <li class="list-group-item"><a href="/me/my_ads">Meus anúncios</a></li>
-              <li class="list-group-item"><a href="/me/logoff">Sair</a></li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <a href="/app"> <%- include('./components/btn-returnmyads.ejs') %> </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <%-include('./components/message.ejs') %>
+    <%- include('./components/modal-account-app.ejs') %> <%-include('./components/message.ejs') %>
 
     <!--Formulario de Cadastro-->
     <div class="container">
