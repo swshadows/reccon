@@ -49,6 +49,11 @@
     height: 50%;
   }
 
+  .card-mobile img{
+      width: 100%;
+      height: 100%;
+  }
+
 .h-navbar{
     height: 10vh;
   }
@@ -176,7 +181,7 @@
     
     
     .card-mobile{
-        height: 250px;
+        height: 350px;
         border-bottom: 1px solid #5b3690;
     }
     

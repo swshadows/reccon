@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const Ads = require("../models/Ad");
+const Address = require("../models/Address");
 
 module.exports = {
   async listAllUsers(req, res) {
@@ -9,7 +10,7 @@ module.exports = {
   },
 
   async registerUser(req, res) {
-    const findAddress = await Address.findOne({ where: { id: req.body.id } });
+    const findAddress = await Address.findOne({ where: { id: req.body.address } });
 
     if (!req.body.name || req.body.name.length > 50) {
       req.session.message = { class: "danger", text: "ERRO: Nome inválido ou vazio, seu nome deve ser menor que 50 caracteres" };
@@ -76,7 +77,7 @@ module.exports = {
   },
 
   async updateUser(req, res) {
-    const findAddress = await Address.findOne({ where: { id: req.body.id } });
+    const findAddress = await Address.findOne({ where: { id: req.body.address } });
 
     if (!req.body.name || req.body.name.length > 50) {
       req.session.message = { class: "danger", text: "ERRO: Nome inválido ou vazio, seu nome deve ser menor que 50 caracteres" };

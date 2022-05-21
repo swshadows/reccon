@@ -43,7 +43,7 @@
 
 
       <!--Formulario de Cadastro-->
-      <div class="container mb-5">
+      <div style="margin-bottom: 200px;" class="container mb-5">
           <div class="row">
               <div class="col-md-12">
                 <div class="fff-bg-color">
@@ -52,7 +52,7 @@
                     <div class="form-group py-4 px-4">
                         <!--input do nome-->
                         <div class="name d-flex gap-2">
-                            <input type="text" name="name" id="name" placeholder="Digite novo nome" pattern="[A-Za-z]{1,50}" title="Maximo de 50 caracteres, somente letras" required></input>
+                            <input type="text" name="name" id="name" placeholder="Digite novo nome" pattern="[A-Z| |a-z]{1,50}" title="Maximo de 50 caracteres, somente letras" required>
                             <label for="text">Nome atual: <%= userinfo.name %> </label>
                         </div>
                         <!--input do email-->
@@ -88,7 +88,7 @@
                         <div class="d-flex justify-content-between botoes">
                           <input type="submit" id="btn" class="btn btn-primary btn-sm secundary-bg-color" value="Salvar alterações">
                           <!-- Button trigger modal -->
-                          <button type="button" class="btn btn-primary btn-sm secundary-bg-color" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          <button type="button" class="btn btn-primary btn-sm secundary-bg-color" data-bs-toggle="modal" data-bs-target="#excludeModal">
                             Excluir Conta
                           </button>
 
@@ -96,7 +96,7 @@
                         </div>
                       </form>
                       <!-- Modal -->
-                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal fade" id="excludeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">

@@ -27,14 +27,14 @@ module.exports = {
   },
 
   async postAd(req, res) {
-    const findAddress = await Address.findOne({ where: { id: req.body.id } });
+    const findAddress = await Address.findOne({ where: { id: req.body.address } });
 
-    if (!req.body.title || req.body.title > 50) {
+    if (!req.body.title || req.body.title.length > 50) {
       req.session.message = { class: "danger", text: "ERRO: O titulo do anuncio está vazio ou passa de 50 caracteres" };
       return res.redirect("/app/create_ad");
     }
 
-    if (!req.body.description || req.body.description > 200) {
+    if (!req.body.description || req.body.description.length > 200) {
       req.session.message = { class: "danger", text: "ERRO: A descrição do anuncio está vazia ou passa de 200 caracteres" };
       return res.redirect("/app/create_ad");
     }
@@ -64,14 +64,14 @@ module.exports = {
   async updateAd(req, res) {
     const prevAd = await Ad.findOne({ where: { id: req.body.id } });
     const currentUser = await User.findOne({ where: { email: req.session.email } });
-    const findAddress = await Address.findOne({ where: { id: req.body.id } });
+    const findAddress = await Address.findOne({ where: { id: req.body.address } });
 
-    if (!req.body.title || req.body.title > 50) {
+    if (!req.body.title || req.body.title.length > 50) {
       req.session.message = { class: "danger", text: "ERRO: O titulo do anuncio está vazio ou passa de 50 caracteres" };
       return res.redirect("/app/create_ad");
     }
 
-    if (!req.body.description || req.body.description > 200) {
+    if (!req.body.description || req.body.description.length > 200) {
       req.session.message = { class: "danger", text: "ERRO: A descrição do anuncio está vazia ou passa de 200 caracteres" };
       return res.redirect("/app/create_ad");
     }

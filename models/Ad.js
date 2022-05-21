@@ -15,7 +15,7 @@ const Ads = sequelize.define("ads", {
     allowNull: false,
   },
   description: {
-    type: Sequelize.STRING(200),
+    type: Sequelize.STRING(400),
     allowNull: false,
   },
   image_path: {

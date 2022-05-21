@@ -12,7 +12,7 @@ router.get("/", checkLogged, appController.renderSessionForms);
 
 router.post("/login", userController.authenticateUser);
 router.post("/register", userController.registerUser);
-router.post("/create_ad", checkNotLogged, upload.single("image"), adController.postAd);
+router.post("/create_ad", checkNotLogged, upload.single("file"), adController.postAd);
 
 router.delete("/delete", checkNotLogged, userController.deleteUser);
 
