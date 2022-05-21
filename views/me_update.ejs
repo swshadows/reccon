@@ -71,7 +71,7 @@
                     <div class="form-group py-4 px-4">
                         <!--input do nome-->
                         <div class="name d-flex gap-2">
-                            <input type="text" name="name" id="name" placeholder="Digite novo nome" pattern="{1,50}" title="Maximo de 50 caracteres" required></input>
+                            <input type="text" name="name" id="name" placeholder="Digite novo nome" pattern="[A-Za-z]{1,50}" title="Maximo de 50 caracteres, somente letras" required></input>
                             <label for="text">Nome atual: <%= userinfo.name %> </label>
                         </div>
                         <!--input do email-->
