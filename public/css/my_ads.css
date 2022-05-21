@@ -21,6 +21,24 @@
   background-color: #e28413 !important;
 }
 
+.modall{
+  width: 300px;
+
+}
+
+.modal-contentt{
+  width: 300px;
+}
+
+.list-group-item{
+    background-color: #1fec8c !important;
+}
+
+.itms-modal a{
+  text-decoration: none;
+  color: #5b3690;
+}
+
 .fff-bg-color {
   background-color: #fff;
   border-radius: 20px;
@@ -113,4 +131,11 @@ select {
 ::-webkit-scrollbar-thumb {
   background-color: #5b3690;
   border-radius: 5px;
+}
+
+@media only screen and (max-width: 766px) {
+
+    .image-mobile{
+      display: none;
+    }
 }

@@ -22,6 +22,26 @@
 }
 /*paleta de cores do projeto*/
 
+.modall{
+    width: 300px;
+  
+  }
+  
+  .modal-contentt{
+    width: 300px;
+  }
+  
+  .list-group-item{
+      background-color: #1fec8c !important;
+  }
+  
+  .itms-modal a{
+    text-decoration: none;
+    color: #5b3690;
+  }
+
+
+
 
 .h-navbar{
     height: 10vh;
@@ -55,7 +75,7 @@
 }
 
 .reccon-img{
-    margin-top: 150px;
+    margin-top: 10%;
     width: 90%;
     height: 500px;
 }
@@ -78,15 +98,7 @@
 
 /*estilizando os icones do carousel*/
 
-.carousel-control-next-icon{
-    background-image: url(assets/Vector-right.svg);
-    margin-left: 30px;
-}
 
-.carousel-control-prev-icon{
-    background-image: url(assets/Vector-left.svg);
-    margin-right: 30px;
-}
 
 .carousel-indicators [data-bs-target]{
     background-color: #5b3690;
@@ -113,11 +125,23 @@
     height: 100%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 766px) {
     .copy{
-        width: 50px;
+        display: none !important;
     }
+
+    .copy-git{
+      width: 100%;
+    }
+
   }
+
+  @media only screen and (max-width: 766px) {
+
+    .image-mobile{
+      display: none;
+    }
+}
 
 
 

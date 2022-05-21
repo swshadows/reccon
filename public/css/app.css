@@ -20,6 +20,23 @@
 .last-bg-color{
     background-color: #e28413 !important;
 }
+.modall{
+    width: 300px;
+  
+  }
+  
+  .modal-contentt{
+    width: 300px;
+  }
+  
+  .list-group-item{
+      background-color: #1fec8c !important;
+  }
+  
+  .itms-modal a{
+    text-decoration: none;
+    color: #5b3690;
+  }
 
 .fff-bg-color{
     background-color: #fff;
@@ -121,3 +138,78 @@
     border-radius: 5px;
 }
 
+.none-mobile{
+    display: none;
+}
+
+@media only screen and (max-width: 766px) {
+
+   .images img:nth-child(2){
+        display: none;
+   }
+
+    .none-mobile{
+        display: block;
+    }
+
+    .none{
+        display: none;
+    }
+    .conteudo-mobile{
+        width: 100%;
+        height: 500px;
+        margin-bottom: 70px !important;
+    }
+    
+    .img{
+        width: 40%;
+        display: flex;
+        align-items: center;
+        background: #55525218;
+        border-radius: 5px;
+    }
+    
+    .img img{
+        width: 100%;
+        
+    }
+    
+    
+    .card-mobile{
+        height: 200px;
+        border-top: 1px solid #5b3690;
+        border-bottom: 1px solid #5b3690;
+    }
+    
+    .text{
+        width: 100%;
+    }
+    
+    .overflow{
+        height: 460px;
+        overflow-x: auto;
+    }
+    
+    ::-webkit-scrollbar{
+        background-color: #a06de7;
+        width: 5px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb{
+        background-color: #5b3690;
+        border-radius: 5px;
+    }
+    
+  }
+
+
+  @media only screen and (max-width: 766px) {
+
+    .image-mobile{
+      display: none;
+    }
+}

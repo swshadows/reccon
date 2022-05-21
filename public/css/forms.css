@@ -27,6 +27,24 @@
 }
 /*paleta de cores do projeto*/
 
+.modall{
+  width: 300px;
+
+}
+
+.modal-contentt{
+  width: 300px;
+}
+
+.list-group-item{
+    background-color: #1fec8c !important;
+}
+
+.itms-modal a{
+  text-decoration: none;
+  color: #5b3690;
+}
+
 .h-navbar{
   height: 10vh;
 }
@@ -89,4 +107,11 @@ select {
   border-radius: 20px;
   background: #ffffff;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+@media only screen and (max-width: 766px) {
+
+  .image-mobile{
+    display: none;
+  }
 }

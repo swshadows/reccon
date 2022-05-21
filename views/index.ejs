@@ -21,10 +21,13 @@
     <!--NavBar do projeto RECCON-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 px-1 greem-bg-color">
       <div class="container h-navbar">
-        <div class="images">
-          <%- include('./components/brand.ejs') %>
+        <div class="images d-flex justify-content-center align-items-center">
+          <a class="navbar-brand" href="/"><img src="/assets/app_icon.png" alt="" /></a>
+          <div class="image-mobile">
+            <a class="navbar-brand" href="/"><img src="/assets/app_name.png" alt="" /></a>
+          </div>
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -39,6 +42,35 @@
         </div>
       </div>
     </nav>
+
+    <div class="modal modall fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content modal-contentt greem-bg-color">
+          <div class="modal-header">
+            <img style="width: 50px;" src="/assets/app_icon.png" alt="">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group list-group-flush itms-modal">
+              <li class="list-group-item"><a href="/static/techs">Tecnologias utilizadas</a></li>
+              <li class="list-group-item"><a href="#">A equipe</a></li>
+              <li class="list-group-item"><a href="#">FAQ</a></li>
+              <li class="list-group-item"><a href="#">Pesquisas e entrevistas</a></li>
+              <% if (!locals.logged) { %> <% } else { %>
+              <li class="list-group-item"><a class="" href="/me/logoff">Sair</a></li>
+              <% } %>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <% if (!logged) { %>
+              <%- include('./components/btn-login.ejs') %>
+            <% } else { %>
+              <%- include('./components/btn-goapp.ejs') %>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
     <%- include('./components/message.ejs') %>
 
 
@@ -108,9 +140,9 @@
           <div class="row">
             <div class="col-md-12 d-flex justify-content-between py-3">
               <div class="copy d-flex">
-                <p>Todos os direitos reservados &copy;</p>
+                <p>todos os direitos reservado &copy</p>
               </div>
-              <div class="links fa-3 text-center copy">
+              <div class="links fa-3 text-center copy-git">
                 <a href="https://github.com/swshadows/reccon" target="_blank"><i class="devicon-github-original"></i></a>
                 <a href="https://www.figma.com/file/BfEmE4YiZ0DSRzPSP4g5Kw/reccon?node-id=0%3A1" target="_blank"><i class="devicon-figma-plain"></i></a>
               </div>
