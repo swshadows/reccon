@@ -31,7 +31,7 @@ function renderPage(res, target) {
     for (i in res) {
       target.innerHTML += `
     <div class="col d-flex justify-content-center py-2">
-              <div class="card h-100">
+              <div class="card h-200">
                 <img src="${res[i].image_path}" class="card-img-top" alt="..." />
                 <div class="card-body d-flex flex-column justify-content-between">
                   <h5 class="card-title">${res[i].title}</h5>
