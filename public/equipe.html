@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/equipe.css" />
+    <title>Tecnologias utilizadas</title>
+  </head>
+  <body class="primary-bg-color">
+    <!--NavBar do projeto RECCON-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 px-1 greem-bg-color">
+      <div class="container h-navbar">
+        <div class="images"><%- include('./components/brand.ejs') %></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <%-include('./components/dropdown-about.ejs') %>
+          <form class="d-flex"><%- include('./components/btn-returnindex.ejs') %></form>
+        </div>
+      </div>
+    </nav>
+
+      <!--Conteudo principal-->
+      
+     <div class="container radius mt-5 mb-5 conteudo">
+      <div class="text-center">
+        <h1>Equipe</h1>
+      </div>
+       <div class="row d-flex justify-content-between overflow">
+
+         <div class="col-md-2 m-2 card-equipe">
+           <div class="card-persoanl">
+            <img src="./img/natan.jpeg" class="img-thumbnail figure-img img-fluid rounded">
+            <div class=" d-flex justify-content-between">
+              <figcaption class="figure-caption">Natanael Falcão Xavier</figcaption>
+              <a href="mailto:natanael.falcao@hotmail.com"><i class="bi bi-envelope"></i></a>
+            </div>
+            <p>C.O e lider da equipe, responsavel pela organização</p>
+           </div>
+         </div>
+
+         <div class="col-md-2 m-2 card-equipe">
+          <div class="card-persoanl">
+           <img src="./img/iderlan.jpeg" class="img-thumbnail figure-img img-fluid rounded">
+           <div class=" d-flex justify-content-between">
+             <figcaption class="figure-caption">Iderlan Oliveira Lira</figcaption>
+             <a href="mailto:mroliveiralira@gmail.com"><i class="bi bi-envelope"></i></a>
+           </div>
+           <p>Artigo, documentação e arquivos</p>
+          </div>
+        </div>
+
+        <div class="col-md-2 m-2 card-equipe">
+          <div class="card-persoanl">
+           <img src="./img/denner.jpeg" class="img-thumbnail figure-img img-fluid rounded">
+           <div class=" d-flex justify-content-between">
+             <figcaption class="figure-caption">Denner Lucas da Silva Pantoja</figcaption>
+             <a href="mailto:denner_lukas2014@hotmail.com"><i class="bi bi-envelope"></i></a>
+           </div>
+           <p>Causas sociais <br> confecções entre outros </p>
+          </div>
+        </div>
+
+        <div class="col-md-2 m-2 card-equipe">
+          <div class="card-persoanl">
+           <img src="./img/samuel.jpeg" class="img-thumbnail figure-img img-fluid rounded">
+           <div class=" d-flex justify-content-between">
+             <figcaption class="figure-caption">Samuel Gomes Braga</figcaption>
+             <a href="mailto:samuelgomesbraga32@gmail.com"><i class="bi bi-envelope"></i></a>
+           </div>
+           <p>Artigo, documentação e arquivos</p>
+          </div>
+        </div>
+
+        <div class="col-md-2 m-2 card-equipe">
+          <div class="card-persoanl">
+           <img src="./img/stefany.jpeg" class="img-thumbnail figure-img img-fluid rounded">
+           <div class=" d-flex justify-content-between">
+             <figcaption class="figure-caption">Stefany Lohany Avinte Santiago </figcaption>
+             <a href="mailto:stefany028lohany@gmail.com"><i class="bi bi-envelope"></i></a>
+           </div>
+           <p>Causas sociais <br> confecções entre outros </p>
+          </div>
+        </div>
+
+        <div class="col-md-2 m-2 card-equipe">
+          <div class="card-persoanl">
+           <img src="./img/thiago.jpeg" class="img-thumbnail figure-img img-fluid rounded">
+           <div class=" d-flex justify-content-between">
+             <figcaption class="figure-caption">Thiago Leão de Oliveira</figcaption>
+             <a href="mailto:thiagoldo18@gmail.com"><i class="bi bi-envelope"></i></a>
+           </div>
+           <p>Confecções de camisas</p>
+          </div>
+        </div>
+
+        <div class="col-md-2 m-2 card-equipe">
+          <div class="card-persoanl">
+           <img src="./img/fernando.jpeg" class="img-thumbnail figure-img img-fluid rounded">
+           <div class=" d-flex justify-content-between">
+             <figcaption class="figure-caption">Fernando Cosme da Silva Neto </figcaption>
+             <a href="mailto:fcosme8@gmail.com"><i class="bi bi-envelope"></i></a>
+           </div>
+           <p>Documentação e artigo</p>
+          </div>
+        </div>
+         
+        <div class="col-md-2 m-2 card-equipe">
+          <div class="card-persoanl">
+           <img src="./img/rafael.jpeg" class="img-thumbnail figure-img img-fluid rounded">
+           <div class=" d-flex justify-content-between">
+             <figcaption class="figure-caption">Rafael Pereira de Souza</figcaption>
+             <a href="mailto:rafaelpereirasouza76@gmail.com"><i class="bi bi-envelope"></i></a>
+           </div>
+           <p>Confecções de camisas</p>
+          </div>
+        </div>
+
+        <div class="col-md-2 m-2 card-equipe">
+          <div class="card-persoanl">
+           <img src="./img/oscar.jpg" class="img-thumbnail figure-img img-fluid rounded">
+           <div class=" d-flex justify-content-between">
+             <figcaption class="figure-caption">Oscar Barbosa de Oliveira</figcaption>
+             <a href="mailto:Oscaroliveiraiii@gmail.com"><i class="bi bi-envelope"></i></a>
+           </div>
+           <p>Documentação e arquivos</p>
+          </div>
+        </div>
+
+        <div class="col-md-2 m-2 card-equipe">
+          <div class="card-persoanl">
+           <img src="./img/joe.jpg" class="img-thumbnail figure-img img-fluid rounded">
+           <div class=" d-flex justify-content-between">
+             <figcaption class="figure-caption">Joelson Pereira Lima</figcaption>
+             <a href="mailto:joelson.jpl@gmail.com"><i class="bi bi-envelope"></i></a>
+           </div>
+           <p>Desenvolvedor Backend / Desing</p>
+          </div>
+        </div>
+
+        <div class="d-flex gap-3 dev">
+          <div class="col-md-2 m-2 card-equipe">
+            <div class="card-persoanl">
+             <img src="./img/endrew.jpeg" class="img-thumbnail figure-img img-fluid rounded">
+             <div class=" d-flex justify-content-between">
+               <figcaption class="figure-caption">Endrew Dias do Nascimento </figcaption>
+               <a href="mailto:Endrewdias11@gmail.com"><i class="bi bi-envelope"></i></a>
+             </div>
+             <p>Desenvolvedor suporte ao Frontend</p>
+            </div>
+          </div>
+
+          <div class="col-md-2 m-2 card-equipe">
+            <div class="card-persoanl">
+             <img src="./img/david.jpg" class="img-thumbnail figure-img img-fluid rounded">
+             <div class=" d-flex justify-content-between">
+               <figcaption class="figure-caption">David Teixeira Magalhães</figcaption>
+               <a href="mailto:david.tm@outlook.com"><i class="bi bi-envelope"></i></a>
+             </div>
+             <p>Suporte ao Backend</p>
+            </div>
+          </div>
+
+          <div class="col-md-2 m-2 card-equipe">
+            <div class="card-persoanl">
+             <img src="./img/leonardo.jpg" class="img-thumbnail figure-img img-fluid rounded">
+             <div class=" d-flex justify-content-between">
+               <figcaption class="figure-caption">Leonardo Chagas da Silva</figcaption>
+               <a href="mailto:leonardosilvaC97@outlook.com"><i class="bi bi-envelope"></i></a>
+             </div>
+             <p>Desenvolvedor Frontend / Desing</p>
+            </div>
+          </div>
+        </div>
+         
+       </div>
+     </div>
+      
+      <!--Footer do projeto-->
+      <%- include('./components/footer.ejs') %>
+
+    <!--Bootstrap Javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+    crossorigin="anonymous"></script>
+</body>
+</html>

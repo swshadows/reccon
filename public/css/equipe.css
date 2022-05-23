@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+
+* {
+    font-family: 'Jockey One', sans-serif;
+}
+
+
+/*paleta de cores do projeto*/
+.primary-bg-color{
+    background-color: #f5ffee !important;
+}
+
+.secundary-bg-color{
+    background-color: #5b3690 !important;
+}
+
+.greem-bg-color{
+    background-color: #1fec8c !important;
+}
+
+.last-bg-color{
+    background-color: #e28413 !important;
+}
+/*paleta de cores do projeto*/
+
+
+/*Classe padrao para sombra*/
+.radius{
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+}
+
+/*estilizando os icones do carousel*/
+
+.conteudo-mobile{
+    width: 100%;
+    height: 500px;
+}
+
+.img{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    background: #55525218;
+    border-radius: 5px;
+}
+
+.img img{
+    width: 100%;
+    
+}
+
+
+.card-mobile{
+    height: 200px;
+    border-top: 1px solid #5b3690;
+    border-bottom: 1px solid #5b3690;
+}
+
+.text{
+    width: 100%;
+}
+
+.overflow{
+    height: 500px;
+    overflow-x: auto;
+}
+
+.conteudo{
+     height: 600px;
+}
+
+::-webkit-scrollbar{
+    background-color: #a06de7;
+    width: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #5b3690;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 766px) {
+        .dev{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-equipe{
+            margin: 0 !important;
+        }
+}
+
+
+
+
