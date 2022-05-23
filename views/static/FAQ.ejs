@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <%- include('../meta/favicon.ejs') %>
+    <title>FAQ</title>
+  </head>
+  <body class="primary-bg-color">
+    <!--NavBar do projeto RECCON-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 px-1 greem-bg-color">
+      <div class="container h-navbar">
+        <div class="images">
+          <a class="navbar-brand" href="/"><img src="/assets/app_icon.png" alt="" /></a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <%-include('../components/dropdown-about.ejs') %>
+          <form class="d-flex"><%- include('../components/btn-returnindex.ejs') %></form>
+        </div>
+      </div>
+    </nav>
+
+    <%- include('../components/modal-index.ejs') %>
+
+    <div class="container mt-5">
+      <h2 class="mb-3 text-center">FAQ: Perguntas Frequentes</h2>
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">#1. Como fazer o cadastro no aplicativo?</button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>O cadastro pode ser feito através da tela de cadastro <a target="blank" href="/forms">clicando aqui</a>. Depois de preencher todos os campos com dados válidos, é possível realizar o login e acessar os anuncios pela mesma tela.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">#2. Como publico anuncios na plataforma?</button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>Os anúncios podem ser publicados através do botao<strong> Publicar anuncio </strong> presente na tela principal. Você tem acesso a inserção de titulo, descrição do seu item anunciado e o endereço da coleta. Também está disponível a exibição de uma imagem (opcional).</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">#3. Como entro em contato com um anunciante?</button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>Você pode entrar em contato com um anunciante através do botão <strong> Contatar doador </strong> presente abaixo da descrição do anuncio. Essa opção abrirá uma chat no aplicativo WhatsApp, onde o procedimento da doação poderá ser concluido.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">#4. Como posso alterar meus anuncios? E excluí-los?</button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>
+                Os anúncios publicados podem ser acessados através da opção <strong> Meus anuncios </strong> presente na tela principal, no botão <strong> Opções de conta</strong>. Você tem acesso a edição e remoção do seu anuncio na plataforma. A deleção de um anuncio da plataforma é uma ação
+                permanente e deve ser realizada com cautela.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">#5. Meu bairro não está disponível, e agora?</button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>Os bairros foram selecionados à mão e nem todos podem estar presentes no momento atual da aplicação, que está em estado de demonstração.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingSix">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">#6. Como alterar meus dados de cadastro? E como excluir a minha conta?</button>
+          </h2>
+          <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>
+                Os dados cadastrais podem ser acessados através da opção <strong> Alterar informações </strong> presente na tela principal, no botão <strong> Opções de conta</strong>. Você tem acesso a edição e remoção do seu perfil na plataforma. A deleção de um perfil da plataforma é uma ação
+                permanente e deve ser realizada com cautela.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingSeven">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">#7. Onde o aplicativo está disponível?</button>
+          </h2>
+          <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>Estando em estado de demonstração, o aplicativo está disponível somente de forma local.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer do projeto-->
+    <%- include('../components/footer.ejs') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

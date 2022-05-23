@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <%- include('../meta/favicon.ejs') %>
+    <title>FAQ</title>
+  </head>
+  <body class="primary-bg-color">
+    <!--NavBar do projeto RECCON-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 px-1 greem-bg-color">
+      <div class="container h-navbar">
+        <div class="images">
+          <a class="navbar-brand" href="/"><img src="/assets/app_icon.png" alt="" /></a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <%-include('../components/dropdown-about.ejs') %>
+          <form class="d-flex"><%- include('../components/btn-returnindex.ejs') %></form>
+        </div>
+      </div>
+    </nav>
+
+    <%- include('../components/modal-index.ejs') %>
+
+    <div style="margin-bottom: 200px" class="container mt-5">
+      <ol class="mt-5 list-group list-group-flush">
+        <li class="rounded d-flex flex-column list-group-item">
+          <a href="#metodologias">Metodologias e referencial</a>
+          <small>Nossa metodologia de pesquisa e referências sobre reciclagem</small>
+        </li>
+        <li class="rounded d-flex flex-column list-group-item">
+          <a href="#conclusao">Conclusão do trabalho</a>
+          <small>A conclusão do nosso trabalho, com resultados e gráficos para ilustrar os mesmos</small>
+        </li>
+        <li class="rounded d-flex flex-column list-group-item">
+          <a href="#anexos">Anexos e mídia referência</a>
+          <small>Anexos relacionados ao nosso trabalho de pesquisa e projeto</small>
+        </li>
+        <li class="rounded d-flex flex-column list-group-item">
+          <a href="#relatorio">Relatório oficial do projeto</a>
+          <small>Nosso documento oficial do relatório do projeto</small>
+        </li>
+      </ol>
+
+      <div class="mt-5" id="metodologias">
+        <h3>Metodologias e referencial</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, facilis ab sed atque, ad magnam possimus aperiam odit assumenda minus nihil libero odio nisi architecto placeat repellendus repudiandae, a eius?</p>
+      </div>
+      <div class="mt-5" id="conclusao">
+        <h3>Conclusão do trabalho</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, facilis ab sed atque, ad magnam possimus aperiam odit assumenda minus nihil libero odio nisi architecto placeat repellendus repudiandae, a eius?</p>
+      </div>
+      <div class="mt-5" id="anexos">
+        <h3>Anexos e mídia referência</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OQ5jpiKzNqg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/D73BR9WRmmE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/wgPn3kZZtIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/H5rbcjYYTXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="mt-5" id="relatorio">
+        <h3>Relatório oficial do projeto</h3>
+        <a href="/docs/relatorio_reccon.pdf" download>Clique aqui para fazer o download do relatório oficial do projeto Reccon</a>
+      </div>
+    </div>
+
+    <!--Footer do projeto-->
+    <%- include('../components/footer.ejs') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -52,6 +52,9 @@
     
 }
 
+.navbar-brand img{
+    width: 80px;
+}
 
 .card-mobile{
     height: 200px;

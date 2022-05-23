@@ -80,7 +80,19 @@ module.exports = {
 
   // static.routes
   async renderStaticTechs(req, res) {
-    res.render("./static/techs.ejs");
+    res.render("./static/techs.ejs", { logged: req.session.logged });
+  },
+
+  async renderStaticFAQ(req, res) {
+    res.render("./static/FAQ.ejs", { logged: req.session.logged });
+  },
+
+  async renderStaticTeam(req, res) {
+    res.render("./static/team.ejs", { logged: req.session.logged });
+  },
+
+  async renderStaticInfo(req, res) {
+    res.render("./static/info.ejs", { logged: req.session.logged });
   },
 
   // error.routes

@@ -39,11 +39,12 @@
   }
 
 .img-card{
-    height: 100px;
+    height: 200px;
 }
 
 .img-card img{
     width: 100%;
+    height: 100%;
 }
 
 .fff-bg-color{
