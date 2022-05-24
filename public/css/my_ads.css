@@ -53,6 +53,10 @@
   height: 100%;
   width: 30%;
 }
+.overflow{
+    height: 400px;
+    overflow-x: auto;
+}
 
 .images img {
   width: 80px;

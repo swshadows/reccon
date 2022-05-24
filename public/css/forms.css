@@ -46,7 +46,7 @@
 }
 
 .h-navbar{
-  height: 10vh;
+  height: 12vh;
 }
 
 .images{
@@ -73,7 +73,7 @@
 /* estilizando o formulario*/
 
 .formulario {
-  margin-top: 100px;
+  margin-top: 50px;
   height: 500px;
 }
 
