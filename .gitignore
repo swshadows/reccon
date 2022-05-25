@@ -3,7 +3,7 @@
 node_modules
 database/img/*.*
 *.sh
-*:Zone-Identifier
+*:Zone.Identifier
 
 # Not ignored
 !database/img/.gitkeep

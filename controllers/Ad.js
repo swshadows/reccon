@@ -34,8 +34,8 @@ module.exports = {
       return res.redirect("/app/create_ad");
     }
 
-    if (!req.body.description || req.body.description.length > 200) {
-      req.session.message = { class: "danger", text: "ERRO: A descrição do anuncio está vazia ou passa de 200 caracteres" };
+    if (!req.body.description || req.body.description.length > 400) {
+      req.session.message = { class: "danger", text: "ERRO: A descrição do anuncio está vazia ou passa de 400 caracteres" };
       return res.redirect("/app/create_ad");
     }
 
@@ -71,8 +71,8 @@ module.exports = {
       return res.redirect("/app/create_ad");
     }
 
-    if (!req.body.description || req.body.description.length > 200) {
-      req.session.message = { class: "danger", text: "ERRO: A descrição do anuncio está vazia ou passa de 200 caracteres" };
+    if (!req.body.description || req.body.description.length > 400) {
+      req.session.message = { class: "danger", text: "ERRO: A descrição do anuncio está vazia ou passa de 400 caracteres" };
       return res.redirect("/app/create_ad");
     }
 
