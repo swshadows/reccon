@@ -17,21 +17,22 @@
 
 A equipe foi subdividida em vários setores para facilitar tanto o desenvolvimento da aplicação, quanto as requsições dos orientadores e da feira de tecnologia Inovatec
 
-| Nome            | Função                | Equipe                       |
-| --------------- | --------------------- | ---------------------------- |
-| Natanael Falcão | Organização Geral     | Organização Geral            |
-| Joelson Lima    | Dev Backend / Design  | Desenvolvimento da Aplicação |
-| David Teixeira  | Suporte ao Backend    | Desenvolvimento da Aplicação |
-| Leonardo Chagas | Dev Frontend          | Desenvolvimento da Aplicação |
-| Endrew Diaz     | Dev Frontend          | Desenvolvimento da Aplicação |
-| Iderlan Lira    | Articulação do Artigo | Documentações e Arquivos     |
-| Fernando Cosme  | Articulação do Artigo | Documentações e Arquivos     |
-| Samuel Gomes    | Articulação do Artigo | Documentações e Arquivos     |
-| Oscar Oliveira  | Design de Arquivos    | Documentações e Arquivos     |
-| Thiago Leão     | Confecção das Camisas | Camisas                      |
-| Rafael Pereira  | Confecção das Camisas | Camisas                      |
-| Denner Pantoja  | Confecção de Brindes  | Causas Sociais               |
-| Stefanny Lohany | Causas Sociais        | Causas Sociais               |
+| Nome            | Função                 | Equipe                       |
+| --------------- | ---------------------- | ---------------------------- |
+| Natanael Falcão | Organização Geral      | Organização Geral            |
+| Joelson Lima    | Dev Backend / Design   | Desenvolvimento da Aplicação |
+| David Teixeira  | Suporte ao Backend     | Desenvolvimento da Aplicação |
+| Leonardo Chagas | Dev Frontend           | Desenvolvimento da Aplicação |
+| Endrew Diaz     | Dev Frontend           | Desenvolvimento da Aplicação |
+| Iderlan Lira    | Articulação do Artigo  | Documentações e Arquivos     |
+| Fernando Cosme  | Articulação do Artigo  | Documentações e Arquivos     |
+| Samuel Gomes    | Articulação do Artigo  | Documentações e Arquivos     |
+| Oscar Oliveira  | Design de Arquivos     | Documentações e Arquivos     |
+| Thiago Leão     | Confecção das Camisas  | Camisas                      |
+| Rafael Pereira  | Confecção das Camisas  | Camisas                      |
+| Denner Pantoja  | Confecção de Brindes   | Causas Sociais               |
+| Stefanny Lohany | Causas Sociais         | Causas Sociais               |
+| Jerônimo Rabelo | Apresentação no Evento | Evento                       |
 
 ## Objetivo do Projeto
 
